@@ -64,9 +64,7 @@ python -m backend.main
 ```
 
 Then open your browser to:
-- **Main Wedding Website**: [http://localhost:8000/](http://localhost:8000/)
-- **Personalized Guest Invitation**: [http://localhost:8000/invite.html?token=kp-ramesh-101](http://localhost:8000/invite.html?token=kp-ramesh-101)
-- **Interactive API Documentation (Swagger)**: [http://localhost:8000/docs](http://localhost:8000/docs)
+- **Main Wedding Website**:https://weddingsbyjod.com/
 
 ### 3. Demo / Offline Mode
 The frontend is completely self-contained with offline fallback data:
