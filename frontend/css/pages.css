@@ -1998,6 +1998,95 @@ body.tpl-preview-open { overflow: hidden; }
     color: #2D2321;
 }
 
+/* ─── 404 LOST PAGE ───────────────────────────────────────── */
+html:has(.lost-page),
+.lost-page {
+    height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden;
+}
+.lost-main {
+    height: 100dvh;
+    max-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5.75rem 1.25rem 1rem;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.lost-stage {
+    position: relative;
+    width: min(92vw, calc((100dvh - 7rem) * 433 / 577), 560px);
+    margin: 0 auto;
+    container-type: inline-size;
+    container-name: lost-arch;
+}
+.lost-arch {
+    display: block;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+}
+.lost-in-arch {
+    position: absolute;
+    left: 50%;
+    top: 57%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    pointer-events: none;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.lost-code {
+    margin: 0;
+    display: block;
+    width: 100%;
+    font-family: var(--font-serif);
+    font-weight: 300;
+    font-size: clamp(3.1rem, 18cqi, 6.4rem);
+    line-height: 0.82;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+    text-shadow: 0 8px 28px rgba(201, 169, 110, 0.22);
+}
+.lost-eyebrow {
+    margin: 0.45rem 0 0;
+    display: block;
+    width: 100%;
+    font-size: clamp(0.62rem, 3.35cqi, 0.92rem);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #2D2321;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+}
+[data-theme="light"] .lost-code {
+    color: #C9A96E;
+}
+[data-theme="dark"] .lost-eyebrow {
+    color: #F5EFE4;
+}
+
+@media (max-width: 560px) {
+    .lost-main { padding: 5.25rem 0.85rem 0.75rem; }
+    .lost-stage { width: min(94vw, calc((100dvh - 6.25rem) * 433 / 577)); }
+    .lost-in-arch { width: 50%; top: 56%; }
+    .lost-code { font-size: clamp(2.6rem, 17cqi, 4.6rem); }
+    .lost-eyebrow { font-size: clamp(0.55rem, 3.1cqi, 0.78rem); letter-spacing: 0.06em; }
+}
+
 @media (prefers-reduced-motion: reduce) {
     .tpl-live,
     .gprev { transition: none; }

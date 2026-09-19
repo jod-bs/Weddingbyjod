@@ -1,8 +1,10 @@
 import logging
 from contextlib import asynccontextmanager
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
+from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from backend.config import settings
 from backend.database.connection import init_db
@@ -66,12 +68,30 @@ def health_check():
         "platform": "JOD Weddings"
     }
 
+@app.exception_handler(StarletteHTTPException)
+async def http_exception_handler(request: Request, exc: StarletteHTTPException):
+    if exc.status_code != 404:
+        return JSONResponse({"detail": exc.detail}, status_code=exc.status_code)
+    if request.url.path.startswith("/api"):
+        return JSONResponse({"detail": exc.detail or "Not found"}, status_code=404)
+    not_found = settings.FRONTEND_DIR / "404.html"
+    if not_found.exists():
+        return FileResponse(not_found, status_code=404, media_type="text/html")
+    return JSONResponse({"detail": "Not found"}, status_code=404)
+
+class SiteStaticFiles(StaticFiles):
+    async def get_response(self, path: str, scope):
+        request_path = scope.get("path", "")
+        if request_path.startswith("/api"):
+            raise StarletteHTTPException(status_code=404, detail="Not found")
+        return await super().get_response(path, scope)
+
 # Mount static frontend directories
 if settings.UPLOAD_DIR.exists():
     app.mount("/assets/uploads", StaticFiles(directory=str(settings.UPLOAD_DIR)), name="uploads")
 
 if settings.FRONTEND_DIR.exists():
-    app.mount("/", StaticFiles(directory=str(settings.FRONTEND_DIR), html=True), name="frontend")
+    app.mount("/", SiteStaticFiles(directory=str(settings.FRONTEND_DIR), html=True), name="frontend")
 else:
     logger.warning(f"Frontend directory not found at {settings.FRONTEND_DIR}")
 
