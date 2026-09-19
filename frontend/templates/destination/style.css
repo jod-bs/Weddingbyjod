@@ -1,0 +1,37 @@
+.ds{margin:0;background:#f6f1e4;color:#1d2a36;font-family:'DM Serif Display',serif}
+.ds a{color:inherit;text-decoration:none}
+.ds-hero{position:relative;padding:8vh 8vw 6vh;border:14px solid #1d2a36;margin:1.2rem;min-height:70vh}
+.ds-post{font-family:'IBM Plex Mono',monospace;letter-spacing:.2em;font-size:.75rem}
+.ds-hero h1{font-size:clamp(2.8rem,8vw,5.4rem);font-weight:400;line-height:.95}
+.ds-coord{font-family:'IBM Plex Mono',monospace;font-size:.8rem}
+.ds-stamp{position:absolute;right:8vw;top:8vh;border:3px double #c45c3a;color:#c45c3a;padding:1rem .6rem;transform:rotate(12deg);font-family:'IBM Plex Mono',monospace;letter-spacing:.15em}
+.ds-hero nav{display:flex;gap:1.2rem;margin-top:3rem;font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+.ds-route{padding:6vh 10vw}
+.ds-route ol{list-style:none;padding:0;display:flex;flex-direction:column;gap:0}
+.ds-route li{padding:1rem 0 1rem 1.4rem;border-left:2px solid #1d2a36;position:relative}
+.ds-route li:before{content:'';width:10px;height:10px;background:#1d2a36;border-radius:50%;position:absolute;left:-6px;top:1.3rem}
+.ds-route li strong{display:block;font-size:1.6rem}
+.ds-story{margin-top:2rem;max-width:50ch;font-style:italic}
+.ds-tickets{padding:2rem 8vw 4rem;display:flex;flex-direction:column;gap:1rem}
+.ds-ticket{display:grid;grid-template-columns:1fr 160px;border:1px dashed #1d2a36;background:#fffdf6}
+.ds-ticket>div:first-child{padding:1.2rem 1.4rem}
+.ds-stub{border-left:2px dotted #1d2a36;padding:1.2rem;font-family:'IBM Plex Mono',monospace;font-size:.75rem}
+.ds-guide{padding:4vh 8vw}
+.ds-strip{display:flex;gap:.6rem;overflow:auto;margin-top:1.2rem}
+.ds-strip img{height:180px;width:auto}
+.ds-check{padding:4rem 8vw 7rem}
+.ds-check form{display:flex;gap:.6rem;max-width:480px}
+.ds-check input,.ds-check button{border:1px solid #1d2a36;padding:.8rem;font:inherit;background:#fffdf6}
+.ds-check button{font-family:'IBM Plex Mono',monospace}
+@media (max-width:700px){
+    .ds-ticket{grid-template-columns:1fr;min-width:86%;scroll-snap-align:start}
+    .ds-tickets{flex-direction:row;overflow:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:1.4rem}
+    .ds-stub{border-left:0;border-top:2px dotted #1d2a36}
+    .ds-hero{border-width:8px;min-height:auto}
+    .ds-stamp{position:static;display:inline-block;margin-top:1rem}
+    .ds-strip{scroll-snap-type:x mandatory}
+    .ds-strip img{scroll-snap-align:start;min-width:80%}
+}
+@media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+}

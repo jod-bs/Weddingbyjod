@@ -1,0 +1,30 @@
+.cin{margin:0;background:#070707;color:#f3ece0;font-family:Inter,sans-serif;font-weight:300}
+.cin a{color:#f3ece0;text-decoration:none}
+.cin-nav{position:fixed;right:1.4rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.7rem;z-index:9;font-family:Cinzel,serif;letter-spacing:.2em;font-size:.65rem}
+.cin-scene{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.cin-bg{position:absolute;inset:0;width:100%;height:120%;object-fit:cover;transform:translateY(var(--p,0px));filter:saturate(.8) contrast(1.08)}
+.cin-veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.25) 55%,rgba(0,0,0,.7))}
+.cin-credits,.cin-chapter{position:relative;z-index:2;padding:8vh 8vw;max-width:640px}
+.cin-credits p,.cin-chapter p:first-child{letter-spacing:.4em;text-transform:uppercase;font-size:.7rem}
+.cin-credits h1{font-family:Cinzel,serif;font-weight:400;font-size:clamp(2.4rem,6vw,4.8rem);line-height:1.15}
+.cin-credits em{display:block;font-style:italic;font-family:serif;font-size:.45em;letter-spacing:.3em;margin:.3rem 0}
+.cin-bottom{position:absolute;bottom:2.4rem;left:8vw;z-index:2;letter-spacing:.28em;text-transform:uppercase;font-size:.72rem}
+.cin-scroll{position:absolute;bottom:2.4rem;right:8vw;z-index:2;writing-mode:vertical-rl;letter-spacing:.3em;font-size:.68rem}
+.cin-chapter h2{font-family:Cinzel,serif;font-size:clamp(2rem,5vw,3.6rem);font-weight:400;margin:.4rem 0 1rem}
+.cin-right{margin-left:auto;text-align:right}
+.cin-stills{display:flex;flex-direction:column;gap:.8rem;margin-top:1.4rem}
+.cin-stills article{border-top:1px solid rgba(243,236,224,.25);padding-top:.6rem;display:flex;justify-content:space-between;gap:1rem;font-size:.9rem}
+.cin-stills-row{flex-direction:row;overflow:auto}
+.cin-stills-row img{height:140px;width:auto;object-fit:cover;opacity:.85}
+.cin-end{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4rem 1.5rem}
+.cin-end h2{font-family:Cinzel,serif;font-size:2.6rem;font-weight:400}
+.cin-form{display:flex;flex-direction:column;gap:.7rem;width:min(360px,90%);margin-top:1.4rem}
+.cin-form input,.cin-form select,.cin-form button{background:transparent;border:1px solid rgba(243,236,224,.35);color:#f3ece0;padding:.8rem;font:inherit}
+.cin-form button{letter-spacing:.2em;text-transform:uppercase}
+.cin-fin{margin-top:3rem;font-family:Cinzel,serif;letter-spacing:.5em}
+@media (max-width:800px){
+    .cin-nav{flex-direction:row;top:auto;bottom:1rem;left:50%;right:auto;transform:translateX(-50%);background:rgba(0,0,0,.55);padding:.5rem .8rem}
+    .cin-right{text-align:left;margin:0}
+    .cin-scene{min-height:100svh}
+}
+@media (prefers-reduced-motion:reduce){.cin-bg{transform:none}}

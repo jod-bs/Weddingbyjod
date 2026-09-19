@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="/images/logo/weddings_by_jod_icon.webp">
+    <title>Jade</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="jd" data-template-name="Jade" data-template-slug="jade">
+    <header class="jd-hero">
+        <nav>
+            <a href="#ring">The ring</a>
+            <a href="#petals">Petals</a>
+            <a href="#grove">Grove</a>
+            <a href="#rsvp">Join</a>
+        </nav>
+        <div class="jd-ring">
+            <p>a circle of two</p>
+            <h1><span data-text="couple.partner1"></span><br><em>&amp;</em><br><span data-text="couple.partner2"></span></h1>
+            <p data-text="dateShort"></p>
+        </div>
+        <figure class="jd-coin">
+            <img data-src="heroImage" alt="">
+        </figure>
+    </header>
+    <section id="ring" class="jd-story">
+        <h2>How the circle closed</h2>
+        <p data-text="story"></p>
+    </section>
+    <section id="petals" class="jd-petals">
+        <h2>Four petals</h2>
+        <div class="jd-grid" data-repeat="events">
+            <article>
+                <i></i>
+                <h3>{{item.name}}</h3>
+                <p>{{item.time}}</p>
+                <p>{{item.venue}}</p>
+            </article>
+        </div>
+    </section>
+    <section id="grove" class="jd-grove" data-repeat="gallery">
+        <img src="{{item.src}}" alt="{{item.caption}}">
+    </section>
+    <section id="rsvp" class="jd-rsvp">
+        <h2>Step into the ring</h2>
+        <form class="jod-rsvp">
+            <input name="name" required placeholder="Name">
+            <button type="submit">I’m in the circle</button>
+        </form>
+        <p class="jod-thanks" hidden>A new leaf noted.</p>
+    </section>
+    <script src="/js/wedding-data.js"></script>
+    <script src="/js/preview-toolbar.js"></script>
+</body>
+</html>

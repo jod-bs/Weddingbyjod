@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="/images/logo/weddings_by_jod_icon.webp">
+    <title>Weddings by JOD — Luxury Wedding Planning Platform | India's Premier Bespoke Wedding Designers</title>
+    <meta name="description" content="Weddings by JOD is India's premier luxury wedding planning company. We craft bespoke, cinematic wedding experiences — from intimate ceremonies to grand celebrations. Explore our plans, history, and book a consultation.">
+    <meta name="keywords" content="Weddings by JOD, luxury wedding planners India, bespoke wedding design, wedding platform, premium wedding planning, Chennai weddings, destination weddings India">
+    <meta property="og:title" content="Weddings by JOD — India's Luxury Wedding Platform">
+    <meta property="og:description" content="Not just a wedding. An experience. Weddings by JOD crafts bespoke, cinematic celebrations across India.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/hero-couple.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/design-system.css?v=8">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/platform.css?v=40">
+    <link rel="stylesheet" href="css/pages.css?v=23">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="platform-body home-page">
+
+
+    <!-- PLATFORM NAV -->
+    <nav id="platform-nav" class="platform-nav" aria-label="Weddings by JOD Main Navigation">
+        <div class="container platform-nav-inner">
+            <a href="index.html" class="platform-logo" aria-label="Weddings by JOD Home">
+                <img class="platform-logo-img platform-logo-img--dark" src="images/logo/180X55_weddings_by_JOD_white.webp" width="180" height="55" alt="">
+                <img class="platform-logo-img platform-logo-img--light" src="images/logo/180X55_weddings_by_JOD_black.webp" width="180" height="55" alt="">
+            </a>
+            <ul class="platform-nav-links" role="menubar">
+                <li role="none"><a href="about.html" class="platform-nav-link" role="menuitem">Our Story</a></li>
+                <li role="none"><a href="#services" class="platform-nav-link" role="menuitem">Services</a></li>
+                <li role="none"><a href="templates.html" class="platform-nav-link" role="menuitem">Templates</a></li>
+                <li role="none"><a href="weddings.html" class="platform-nav-link" role="menuitem">Our Celebrations</a></li>
+                <li role="none"><a href="testimonials.html" class="platform-nav-link" role="menuitem">Testimonial</a></li>
+                <li role="none"><a href="#consultation" class="platform-nav-link" role="menuitem">Get-In-Touch</a></li>
+            </ul>
+                        <div class="platform-nav-actions">
+                <button id="platform-theme-toggle" class="platform-theme-toggle" type="button" aria-label="Toggle theme (Light / Dark mode)" title="Switch to Dark Mode">
+                    <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button id="platform-hamburger" class="platform-hamburger" type="button" aria-label="Open mobile menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="platform-mobile-menu" class="platform-mobile-menu" aria-hidden="true">
+        <a href="about.html" class="platform-mobile-link">Our Story</a>
+        <a href="#services" class="platform-mobile-link">Services</a>
+        <a href="templates.html" class="platform-mobile-link">Templates</a>
+        <a href="weddings.html" class="platform-mobile-link">Our Celebrations</a>
+        <a href="testimonials.html" class="platform-mobile-link">Testimonial</a>
+        <a href="#consultation" class="platform-mobile-link">Get-In-Touch</a>
+        <button id="platform-mobile-theme-toggle" class="platform-mobile-theme-toggle" type="button" aria-label="Toggle theme">
+            <span class="theme-label">Switch to Dark Mode</span>
+        </button>
+    </div>
+
+    <!-- HERO -->
+    <section id="home" class="platform-hero" aria-label="Weddings by JOD Hero">
+        <div class="platform-hero-bg">
+            <div class="platform-hero-video-overlay"></div>
+            <div class="platform-hero-particles" id="hero-particles" aria-hidden="true"></div>
+        </div>
+        <!-- Falling Rose Petals Canvas: Exclusive to Hero Section for both light & dark modes -->
+        <canvas id="rose-petals-canvas" class="rose-petals-canvas" aria-hidden="true"></canvas>
+        <!-- Opacity Layer in between rose petals and hero content (both dark & light modes) -->
+        <div class="platform-hero-petals-overlay" aria-hidden="true"></div>
+        <div class="container platform-hero-content">
+            <h1 class="platform-hero-title" data-animate="fade-up" data-delay="100">
+                <span class="platform-hero-title-sub">Every Love Story Deserves</span>
+                <span class="platform-hero-title-script">An Extraordinary</span>
+                <span class="platform-hero-title-main">Celebration</span>
+            </h1>
+            <p class="platform-hero-desc" data-animate="fade-up" data-delay="200">
+                From intimate ceremonies to grand royal celebrations, Weddings by JOD designs bespoke digital and in-person wedding experiences that honour the depth of your love story.
+            </p>
+            <div class="platform-hero-actions" data-animate="fade-up" data-delay="300">
+                <a href="#consultation" class="btn btn-gold btn-lg">Begin Your Journey</a>
+                <a href="#customise" class="btn btn-ghost-light btn-lg">See Custom Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="platform-marquee" aria-hidden="true">
+        <div class="platform-marquee-track">
+            <span>VENUE</span><span>&#10022;</span>
+            <span>DESTINATION WEDDING</span><span>&#10022;</span>
+            <span>PHOTOGRAPHY</span><span>&#10022;</span>
+            <span>DECOR</span><span>&#10022;</span>
+            <span>ENTERTAINMENT</span><span>&#10022;</span>
+            <span>DIGITAL WEDDING</span><span>&#10022;</span>
+            <span>HOSPITALITY</span><span>&#10022;</span>
+            <span>GIFTING</span><span>&#10022;</span>
+            <span>VENUE</span><span>&#10022;</span>
+            <span>DESTINATION WEDDING</span><span>&#10022;</span>
+            <span>PHOTOGRAPHY</span><span>&#10022;</span>
+            <span>DECOR</span><span>&#10022;</span>
+            <span>ENTERTAINMENT</span><span>&#10022;</span>
+            <span>DIGITAL WEDDING</span><span>&#10022;</span>
+            <span>HOSPITALITY</span><span>&#10022;</span>
+            <span>GIFTING</span><span>&#10022;</span>
+        </div>
+    </div>
+
+    <!-- COMPANY HISTORY -->
+    <section id="story" class="platform-section platform-history" aria-labelledby="history-heading" hidden>
+        <div class="container">
+            <div class="platform-section-header">
+                <p class="section-eyebrow" data-animate="fade-up">Est. 2018</p>
+                <h2 id="history-heading" class="platform-section-title" data-animate="fade-up">The JOD Story</h2>
+                <p class="platform-section-desc" data-animate="fade-up">
+                    Born from a belief that every love deserves to be celebrated with grandeur, Weddings by JOD has been the silent architect behind some of India's most cherished celebrations.
+                </p>
+            </div>
+
+            <div class="history-timeline">
+                <div class="history-timeline-line" data-animate="line" aria-hidden="true"></div>
+
+                <article class="history-item" data-animate="fade-right" data-delay="0">
+                    <div class="history-year">2018</div>
+                    <div class="history-card">
+                        <h3>The Founding Vision</h3>
+                        <p>Weddings by JOD was founded in Chennai with a singular vision — to elevate Indian weddings from mere events into curated, timeless experiences. Our first collection of 12 weddings set the gold standard.</p>
+                    </div>
+                </article>
+
+                <article class="history-item history-item--right" data-animate="fade-left" data-delay="100">
+                    <div class="history-year">2015</div>
+                    <div class="history-card">
+                        <h3>Going Pan-India</h3>
+                        <p>With an expanded team of bespoke designers, floral architects, and experience directors, JOD took its luxury brand across Mumbai, Delhi, Jaipur, and Hyderabad — becoming the go-to for elite celebrations.</p>
+                    </div>
+                </article>
+
+                <article class="history-item" data-animate="fade-right" data-delay="200">
+                    <div class="history-year">2018</div>
+                    <div class="history-card">
+                        <h3>Award-Winning Excellence</h3>
+                        <p>Recognised by the Luxury Wedding Awards India as the "Best Bespoke Wedding Planning Company" three consecutive years. Our Rajasthan fort wedding for 1,200 guests became an industry landmark.</p>
+                    </div>
+                </article>
+
+                <article class="history-item history-item--right" data-animate="fade-left" data-delay="300">
+                    <div class="history-year">2021</div>
+                    <div class="history-card">
+                        <h3>The Digital Revolution</h3>
+                        <p>JOD pioneered the concept of the Digital Wedding Portal — a personalised, interactive website for each couple and their guests. This transformed how guests experience weddings even before arriving.</p>
+                    </div>
+                </article>
+
+                <article class="history-item" data-animate="fade-right" data-delay="400">
+                    <div class="history-year">2024</div>
+                    <div class="history-card">
+                        <h3>Global Horizons</h3>
+                        <p>JOD expanded to international destination weddings — Bali, Dubai, Paris — while maintaining its deeply Indian soul. Today, we design 80+ weddings annually across 28 cities and 6 countries.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="platform-section platform-services" aria-labelledby="services-heading">
+        <div class="container">
+            <div class="platform-section-header">
+                <p class="section-eyebrow" data-animate="fade-up">Our Services</p>
+                <h2 id="services-heading" class="platform-section-title" data-animate="fade-up">Everything You Need for a Beautiful Wedding</h2>
+            </div>
+            <div class="section-carousel" data-section-carousel>
+            <div class="services-grid section-carousel-track" data-section-track>
+                <div class="section-carousel-slide">
+                <article class="service-card" data-animate="fade-up" data-delay="0">
+                    <p class="service-card-kicker">Venue</p>
+                    <h3>Find the Right Place for Your Wedding</h3>
+                    <p>We help you find a venue that suits your wedding style, guest list, and budget. From elegant halls to outdoor celebrations, we take care of the venue arrangements.</p>
+                    <ul class="service-features">
+                        <li>Venue Selection</li>
+                        <li>Venue Visits</li>
+                        <li>Booking &amp; Coordination</li>
+                        <li>Layout Planning</li>
+                    </ul>
+                </article>
+                </div>
+                <div class="section-carousel-slide">
+                <article class="service-card" data-animate="fade-up" data-delay="80">
+                    <p class="service-card-kicker">Destination Weddings</p>
+                    <h3>Celebrate Your Wedding Somewhere Special</h3>
+                    <p>Planning a wedding away from home takes extra care. We manage the destination, travel, vendors, and event arrangements so you can enjoy the celebration.</p>
+                    <ul class="service-features">
+                        <li>Destination Planning</li>
+                        <li>Travel Coordination</li>
+                        <li>Vendor Management</li>
+                        <li>Guest Arrangements</li>
+                    </ul>
+                </article>
+                </div>
+                <div class="section-carousel-slide">
+                <article class="service-card" data-animate="fade-up" data-delay="160">
+                    <p class="service-card-kicker">Photography &amp; Film</p>
+                    <h3>Capture Every Moment That Matters</h3>
+                    <p>Your wedding day goes by quickly. Our photography and film team captures the emotions, people, and little moments you will want to remember.</p>
+                    <ul class="service-features">
+                        <li>Pre-Wedding Shoots</li>
+                        <li>Wedding Photography</li>
+                        <li>Cinematic Films</li>
+                        <li>Event Coverage</li>
+                    </ul>
+                </article>
+                </div>
+                <div class="section-carousel-slide">
+                <article class="service-card" data-animate="fade-up" data-delay="0">
+                    <p class="service-card-kicker">Decor</p>
+                    <h3>Turn Your Venue Into Your Dream Setting</h3>
+                    <p>From flowers and lighting to stage design and table décor, we create a wedding setup that matches your style and makes every space feel special.</p>
+                    <ul class="service-features">
+                        <li>Theme &amp; Concept Design</li>
+                        <li>Floral Decor</li>
+                        <li>Stage &amp; Venue Setup</li>
+                        <li>Lighting &amp; Styling</li>
+                    </ul>
+                </article>
+                </div>
+                <div class="section-carousel-slide">
+                <article class="service-card" data-animate="fade-up" data-delay="80">
+                    <p class="service-card-kicker">Entertainment &amp; Arts</p>
+                    <h3>Make Every Celebration More Fun</h3>
+                    <p>Keep your guests entertained with music, performances, artists, and experiences planned around your wedding and your crowd.</p>
+                    <ul class="service-features">
+                        <li>DJs &amp; Live Music</li>
+                        <li>Dance Performances</li>
+                        <li>Artists &amp; Acts</li>
+                        <li>Wedding Entertainment</li>
+                    </ul>
+                </article>
+                </div>
+                <div class="section-carousel-slide">
+                <article class="service-card" data-animate="fade-up" data-delay="160">
+                    <p class="service-card-kicker">Digital Wedding Portal</p>
+                    <h3>Put Your Wedding in One Easy Place</h3>
+                    <p>Give your guests everything they need before the big day. Share your wedding details, schedule, location, updates, and more through a simple digital wedding portal.</p>
+                    <ul class="service-features">
+                        <li>Wedding Website</li>
+                        <li>Event Schedule</li>
+                        <li>Venue &amp; Map Details</li>
+                        <li>Digital Invitations</li>
+                        <li>Guest Information</li>
+                    </ul>
+                </article>
+                </div>
+                <div class="section-carousel-slide">
+                <article class="service-card" data-animate="fade-up" data-delay="0">
+                    <p class="service-card-kicker">Hospitality</p>
+                    <h3>Take Care of Your Guests From Arrival to Goodbye</h3>
+                    <p>Your guests should feel welcomed and looked after throughout the celebration. We manage their stay, travel, food, and event needs.</p>
+                    <ul class="service-features">
+                        <li>Guest Welcome</li>
+                        <li>Travel &amp; Stay Coordination</li>
+                        <li>Food &amp; Guest Services</li>
+                        <li>On-Ground Support</li>
+                    </ul>
+                </article>
+                </div>
+                <div class="section-carousel-slide">
+                <article class="service-card" data-animate="fade-up" data-delay="80">
+                    <p class="service-card-kicker">Gifting</p>
+                    <h3>Give Your Guests Something to Remember</h3>
+                    <p>Choose thoughtful wedding gifts that feel personal and meaningful. We manage the selection, presentation, and delivery for a smooth gifting experience.</p>
+                    <ul class="service-features">
+                        <li>Gift Selection</li>
+                        <li>Personalized Gifts</li>
+                        <li>Welcome Hampers</li>
+                        <li>Gift Packing &amp; Delivery</li>
+                    </ul>
+                </article>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="customise" class="platform-section platform-customise" aria-labelledby="customise-heading">
+        <div class="container">
+            <div class="customise-collage" data-animate="fade-up">
+                <div class="customise-slab" aria-hidden="true"></div>
+                <figure class="customise-shot customise-shot--studio">
+                    <img src="images/custome%20solution/1.webp" alt="Custom wedding design one">
+                </figure>
+                <figure class="customise-shot customise-shot--garden">
+                    <img src="images/custome%20solution/2.webp" alt="Custom wedding design two">
+                </figure>
+                <figure class="customise-shot customise-shot--venue">
+                    <img src="images/custome%20solution/3.webp" alt="Custom wedding design three">
+                </figure>
+                <article class="customise-copy">
+                    <h2 id="customise-heading">Weddings Without a Template</h2>
+                    <p>Your wedding does not have to follow a fixed package.</p>
+                    <p>Tell us what you imagine, and we will build the right wedding around it.</p>
+                    <p>From the venue and décor to photography, entertainment, hospitality, and gifting, we bring together the right services and the right people for your celebration.</p>
+                </article>
+                <ul class="customise-names">
+                    <li>Full-service planning</li>
+                    <li>Digital wedding portal</li>
+                    <li>Decor &amp; florals</li>
+                    <li>Guest experience</li>
+                    <li>Photography &amp; film</li>
+                    <li>Destination design</li>
+                </ul>
+            </div>
+            <p class="customise-note" data-animate="fade-up">If you have read this far, thank you. We hope this is the beginning of a conversation — to design with us, work with us, or simply say hello.</p>
+            <a class="customise-find" href="#consultation" data-animate="fade-up">Find us</a>
+
+            <div class="customise-mosaic" data-animate="fade-up">
+                <figure><img src="images/custome%20solution/1.webp" alt="Custom solution 1"></figure>
+                <figure><img src="images/custome%20solution/2.webp" alt="Custom solution 2"></figure>
+                <figure><img src="images/custome%20solution/3.webp" alt="Custom solution 3"></figure>
+                <figure><img src="images/custome%20solution/4.webp" alt="Custom solution 4"></figure>
+                <figure><img src="images/custome%20solution/5.webp" alt="Custom solution 5"></figure>
+                <figure><img src="images/custome%20solution/6.webp" alt="Custom solution 6"></figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLANS -->
+    <section id="plans" class="platform-section platform-plans" aria-labelledby="plans-heading" hidden>
+        <div class="container">
+            <div class="platform-section-header">
+                <p class="section-eyebrow" data-animate="fade-up">Tailored For You</p>
+                <h2 id="plans-heading" class="platform-section-title" data-animate="fade-up">Wedding Plans</h2>
+                <p class="platform-section-desc" data-animate="fade-up">
+                    Choose the experience that speaks to your vision. Every plan includes your personalised Digital Wedding Portal.
+                </p>
+            </div>
+            <div class="plans-grid">
+                <!-- ESSENTIAL -->
+                <div class="plan-card" data-plan="Essential" data-animate="fade-up" data-delay="0">
+                    <div class="plan-card-header">
+                        <div class="plan-tier-label">Essential</div>
+                        <div class="plan-icon" aria-hidden="true">
+                            <svg viewBox="0 0 36 36" fill="none"><circle cx="18" cy="13" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M8 29c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </div>
+                        <p class="plan-tagline">Beautifully Simple</p>
+                    </div>
+                    <ul class="plan-features-list">
+                        <li><span class="plan-check">&#10022;</span> Full-day coordination</li>
+                        <li><span class="plan-check">&#10022;</span> Digital Wedding Portal</li>
+                        <li><span class="plan-check">&#10022;</span> Decor styling (1 function)</li>
+                        <li><span class="plan-check">&#10022;</span> Photography (8 hours)</li>
+                        <li><span class="plan-check">&#10022;</span> Guest list up to 150</li>
+                        <li class="plan-feature--muted"><span>&#8211;</span> Floral architecture</li>
+                        <li class="plan-feature--muted"><span>&#8211;</span> Destination options</li>
+                    </ul>
+                    <div class="plan-card-action">
+                        <button class="btn btn-outline-gold btn-plan-select" data-select-plan="Essential" type="button">Select This Plan</button>
+                    </div>
+                </div>
+                <!-- LUXURY -->
+                <div class="plan-card" data-plan="Luxury" data-animate="fade-up" data-delay="100">
+                    <div class="plan-card-header">
+                        <div class="plan-tier-label">Luxury</div>
+                        <div class="plan-icon" aria-hidden="true">
+                            <svg viewBox="0 0 36 36" fill="none"><rect x="5" y="8" width="26" height="20" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M5 14h26" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="11" r="1.15" fill="currentColor"/><circle cx="14.5" cy="11" r="1.15" fill="currentColor"/></svg>
+                        </div>
+                        <p class="plan-tagline">The Classic JOD Experience</p>
+                    </div>
+                    <ul class="plan-features-list">
+                        <li><span class="plan-check">&#10022;</span> 3-day full coordination</li>
+                        <li><span class="plan-check">&#10022;</span> Bespoke Digital Portal</li>
+                        <li><span class="plan-check">&#10022;</span> Decor &amp; florals (all functions)</li>
+                        <li><span class="plan-check">&#10022;</span> Photography + Cinematic Film</li>
+                        <li><span class="plan-check">&#10022;</span> Guest list up to 500</li>
+                        <li><span class="plan-check">&#10022;</span> Guest welcome kits</li>
+                        <li><span class="plan-check">&#10022;</span> Dedicated JOD Director</li>
+                    </ul>
+                    <div class="plan-card-action">
+                        <button class="btn btn-outline-gold btn-plan-select" data-select-plan="Luxury" type="button">Select This Plan</button>
+                    </div>
+                </div>
+                <!-- ROYAL -->
+                <div class="plan-card" data-plan="Royal" data-animate="fade-up" data-delay="200">
+                    <div class="plan-card-header">
+                        <div class="plan-tier-label">Royal</div>
+                        <div class="plan-icon" aria-hidden="true">
+                            <svg viewBox="0 0 36 36" fill="none"><path d="M18 7l9 9-9 13-9-13 9-9z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 16h18" stroke="currentColor" stroke-width="1.5"/></svg>
+                        </div>
+                        <p class="plan-tagline">A Legendary Affair</p>
+                    </div>
+                    <ul class="plan-features-list">
+                        <li><span class="plan-check">&#10022;</span> 7-day full immersion</li>
+                        <li><span class="plan-check">&#10022;</span> Fully custom digital experience</li>
+                        <li><span class="plan-check">&#10022;</span> Grand floral architecture</li>
+                        <li><span class="plan-check">&#10022;</span> Multi-photographer + film crew</li>
+                        <li><span class="plan-check">&#10022;</span> Unlimited guest list</li>
+                        <li><span class="plan-check">&#10022;</span> Destination options worldwide</li>
+                        <li><span class="plan-check">&#10022;</span> Private JOD concierge team</li>
+                        <li><span class="plan-check">&#10022;</span> Branded keepsake book</li>
+                    </ul>
+                    <div class="plan-card-action">
+                        <button class="btn btn-outline-gold btn-plan-select" data-select-plan="Royal" type="button">Select This Plan</button>
+                    </div>
+                </div>
+            </div>
+            <p class="plans-note" data-animate="fade-up">
+                Every wedding is uniquely curated. Final bespoke proposals are crafted after your complimentary consultation.
+                <a href="#consultation">Book your consultation &rarr;</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- OUR CELEBRATIONS -->
+    <section id="weddings" class="platform-section platform-weddings" aria-labelledby="weddings-heading">
+        <div class="container">
+            <div class="platform-section-header">
+                <p class="section-eyebrow" data-animate="fade-up">Love Celebrated</p>
+                <h2 id="weddings-heading" class="platform-section-title" data-animate="fade-up">
+                    <a href="weddings.html" class="section-title-link">Our Celebrations</a>
+                </h2>
+                <p class="platform-section-desc" data-animate="fade-up">A glimpse into some of the extraordinary celebrations we have had the honour to create.</p>
+            </div>
+            <div class="section-carousel" data-section-carousel>
+            <div class="polaroid-wall section-carousel-track" data-section-track data-animate="fade-up">
+                <svg class="polaroid-sprig polaroid-sprig--left" viewBox="0 0 90 200" aria-hidden="true">
+                    <path d="M48 200C46 140 58 108 32 52" fill="none" stroke="currentColor" stroke-width="1"/>
+                    <path d="M46 130C62 108 70 92 78 70" fill="none" stroke="currentColor" stroke-width="1"/>
+                    <g fill="currentColor">
+                        <circle cx="30" cy="48" r="3.4"/><circle cx="38" cy="42" r="2.5"/><circle cx="24" cy="56" r="2.2"/>
+                        <circle cx="36" cy="58" r="2.8"/><circle cx="22" cy="44" r="1.8"/><circle cx="42" cy="52" r="2"/>
+                        <circle cx="76" cy="66" r="3"/><circle cx="82" cy="74" r="2.2"/><circle cx="70" cy="76" r="2.4"/>
+                        <circle cx="78" cy="84" r="1.7"/><circle cx="64" cy="98" r="2.1"/><circle cx="40" cy="88" r="1.6"/>
+                    </g>
+                </svg>
+                <div class="section-carousel-slide">
+                <article class="polaroid polaroid--1">
+                    <span class="polaroid-tape"></span>
+                    <div class="polaroid-photo">
+                        <img src="images/couples%20image/Desik%20%2B%20Jasmina/card%20image.webp" alt="Desik and Jasmina" loading="lazy">
+                    </div>
+                    <h3 class="polaroid-name">Desik + Jasmina</h3>
+                </article>
+                </div>
+                <div class="section-carousel-slide">
+                <article class="polaroid polaroid--2">
+                    <span class="polaroid-tape"></span>
+                    <div class="polaroid-photo">
+                        <img src="images/couples%20image/Akriti%20%2B%20Chandrahas/card%20image.webp" alt="Akriti and Chandrahas" loading="lazy">
+                    </div>
+                    <h3 class="polaroid-name">Akriti + Chandrahas</h3>
+                </article>
+                </div>
+                <svg class="polaroid-sprig polaroid-sprig--mid" viewBox="0 0 70 140" aria-hidden="true">
+                    <path d="M22 140C28 96 18 70 36 28" fill="none" stroke="currentColor" stroke-width="1"/>
+                    <g fill="currentColor">
+                        <circle cx="36" cy="26" r="3"/><circle cx="44" cy="32" r="2.2"/><circle cx="30" cy="34" r="2"/>
+                        <circle cx="40" cy="42" r="2.6"/><circle cx="26" cy="48" r="1.7"/><circle cx="48" cy="50" r="1.9"/>
+                    </g>
+                </svg>
+                <div class="section-carousel-slide">
+                <article class="polaroid polaroid--3">
+                    <span class="polaroid-tape"></span>
+                    <div class="polaroid-photo">
+                        <img src="images/couples%20image/Jeyakanthan%20%2B%20Aishwarya/card%20image.webp" alt="Jeyakanthan and Aishwarya" loading="lazy">
+                    </div>
+                    <h3 class="polaroid-name">Jeyakanthan + Aishwarya</h3>
+                </article>
+                </div>
+                <div class="section-carousel-slide">
+                <article class="polaroid polaroid--4">
+                    <span class="polaroid-tape"></span>
+                    <div class="polaroid-photo">
+                        <img src="images/couples%20image/Nikhi%20%2B%20Thakur/card%20image.webp" alt="Nikhi and Thakur" loading="lazy">
+                    </div>
+                    <h3 class="polaroid-name">Nikhi + Thakur</h3>
+                </article>
+                </div>
+                <svg class="polaroid-sprig polaroid-sprig--right" viewBox="0 0 90 180" aria-hidden="true">
+                    <path d="M28 180C34 120 22 90 48 40" fill="none" stroke="currentColor" stroke-width="1"/>
+                    <path d="M36 110C52 88 64 70 72 48" fill="none" stroke="currentColor" stroke-width="1"/>
+                    <g fill="currentColor">
+                        <circle cx="48" cy="38" r="3.2"/><circle cx="56" cy="46" r="2.4"/><circle cx="40" cy="48" r="2"/>
+                        <circle cx="50" cy="54" r="2.7"/><circle cx="70" cy="46" r="2.8"/><circle cx="78" cy="54" r="2"/>
+                        <circle cx="66" cy="60" r="1.8"/><circle cx="38" cy="72" r="2.1"/><circle cx="58" cy="78" r="1.6"/>
+                    </g>
+                </svg>
+            </div>
+            </div>
+            <div class="section-view-all-wrap" data-animate="fade-up">
+                <a href="weddings.html" class="btn-view-more">View More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="platform-section platform-testimonials" aria-labelledby="testimonials-heading">
+        <div class="container">
+            <div class="platform-section-header">
+                <p class="section-eyebrow" data-animate="fade-up">Love Letters</p>
+                <h2 id="testimonials-heading" class="platform-section-title" data-animate="fade-up">
+                    <a href="testimonials.html" class="section-title-link">Testimonial</a>
+                </h2>
+            </div>
+            <div class="testimonials-carousel" id="testimonials-carousel" role="region" aria-label="Testimonials carousel">
+                <div class="testimonials-track" id="testimonials-track">
+                    <div class="testimonial-slide" role="group" aria-label="Testimonial 1 of 5">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <blockquote class="testimonial-quote">"The wedding planning JOD team was one of the best decisions we made because it really took the pressure off of us in terms of figuring out, like, every single detail, and the output that we got was just anything beyond that we really imagined."</blockquote>
+                            <cite class="testimonial-cite">
+                                <span class="testimonial-couple">Desik + Jasmina</span>
+                            </cite>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide" role="group" aria-label="Testimonial 2 of 5">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <blockquote class="testimonial-quote">"Our wedding was built as a sequence of rooms and rituals — warm, cinematic, and wholly our own. The JOD team listened first, then designed everything around how we wanted the day to feel."</blockquote>
+                            <cite class="testimonial-cite">
+                                <span class="testimonial-couple">Akriti + Chandrahas</span>
+                            </cite>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide" role="group" aria-label="Testimonial 3 of 5">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <blockquote class="testimonial-quote">"The day moved between ceremony and celebration with a quiet luxury we did not have to ask for. Guests still remember the light, the pace, and how easy everything felt."</blockquote>
+                            <cite class="testimonial-cite">
+                                <span class="testimonial-couple">Jeyakanthan + Aishwarya</span>
+                            </cite>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide" role="group" aria-label="Testimonial 4 of 5">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <blockquote class="testimonial-quote">"It was styled as a living set — florals, light, and guest experience composed around our story. Nothing felt copied. It felt like us, just more beautiful than we knew how to say."</blockquote>
+                            <cite class="testimonial-cite">
+                                <span class="testimonial-couple">Nikhi + Thakur</span>
+                            </cite>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide" role="group" aria-label="Testimonial 5 of 5">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <blockquote class="testimonial-quote">"Every detail felt considered, and the day unfolded with a warmth we will not forget. JOD held the planning so we could simply be present with the people we love."</blockquote>
+                            <cite class="testimonial-cite">
+                                <span class="testimonial-couple">Prudhvi + Reshma</span>
+                            </cite>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonials-controls" aria-label="Carousel controls">
+                    <button class="testimonial-prev" id="testimonial-prev" aria-label="Previous testimonial">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M12 4l-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="testimonials-dots" id="testimonials-dots" role="tablist" aria-label="Testimonial navigation">
+                        <button class="testimonial-dot active" role="tab" aria-selected="true" aria-label="Testimonial 1" data-index="0"></button>
+                        <button class="testimonial-dot" role="tab" aria-selected="false" aria-label="Testimonial 2" data-index="1"></button>
+                        <button class="testimonial-dot" role="tab" aria-selected="false" aria-label="Testimonial 3" data-index="2"></button>
+                        <button class="testimonial-dot" role="tab" aria-selected="false" aria-label="Testimonial 4" data-index="3"></button>
+                        <button class="testimonial-dot" role="tab" aria-selected="false" aria-label="Testimonial 5" data-index="4"></button>
+                    </div>
+                    <button class="testimonial-next" id="testimonial-next" aria-label="Next testimonial">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M8 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="section-view-all-wrap" data-animate="fade-up">
+                <a href="testimonials.html" class="btn btn-outline-gold">Read All Stories &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONSULTATION -->
+    <section id="consultation" class="platform-section platform-consultation" aria-labelledby="consultation-heading">
+        <div class="container">
+            <div class="consultation-inner">
+                <div class="consultation-left" data-animate="fade-right">
+                    <p class="section-eyebrow">Begin Here</p>
+                    <h2 id="consultation-heading" class="platform-section-title">Let's Create<br><em>Your</em> Wedding</h2>
+                    <p class="consultation-desc">Every extraordinary wedding begins with a conversation. Share your vision with us and a JOD Bespoke Director will reach out within 24 hours to begin crafting your dream celebration.</p>
+                    <div class="consultation-promise">
+                        <div class="promise-item"><span class="promise-icon">&#10022;</span><span>Free initial consultation</span></div>
+                        <div class="promise-item"><span class="promise-icon">&#10022;</span><span>Response within 24 hours</span></div>
+                        <div class="promise-item"><span class="promise-icon">&#10022;</span><span>No obligation, just possibilities</span></div>
+                        <div class="promise-item"><span class="promise-icon">&#10022;</span><span>Complete confidentiality</span></div>
+                    </div>
+                </div>
+                <div class="consultation-right" data-animate="fade-left">
+                    <form id="platform-inquiry-form" class="consultation-form" novalidate aria-label="Consultation request form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="inquiry-name" class="form-label">Full Name <span aria-hidden="true">*</span></label>
+                                <input type="text" id="inquiry-name" name="name" class="form-input" placeholder="Your name" required autocomplete="name" aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="inquiry-phone" class="form-label">Phone <span aria-hidden="true">*</span></label>
+                                <input type="tel" id="inquiry-phone" name="phone" class="form-input" placeholder="+91 98765 43210" required autocomplete="tel" aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inquiry-email" class="form-label">Email Address</label>
+                            <input type="email" id="inquiry-email" name="email" class="form-input" placeholder="your@email.com" autocomplete="email">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="inquiry-city" class="form-label">Wedding City / Destination</label>
+                                <input type="text" id="inquiry-city" name="city" class="form-input" placeholder="e.g. Chennai, Jaipur, Bali">
+                            </div>
+                            <div class="form-group">
+                                <label for="inquiry-date" class="form-label">Approximate Date</label>
+                                <input type="text" id="inquiry-date" name="date" class="form-input" placeholder="e.g. Feb 2026">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inquiry-notes" class="form-label">Tell Us About Your Dream Wedding</label>
+                            <textarea id="inquiry-notes" name="notes" class="form-input form-textarea" rows="4" placeholder="Share your vision, theme ideas, or any special requirements..."></textarea>
+                        </div>
+                        <button type="submit" id="inquiry-submit-btn" class="btn btn-gold btn-block btn-lg">Request Bespoke Consultation</button>
+                        <p class="form-privacy">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><rect x="2" y="6" width="10" height="7" rx="1" stroke="currentColor" stroke-width="1.2"/><path d="M4 6V4a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2"/></svg>
+                            Your information is kept completely private and will only be used to contact you about your wedding consultation.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="platform-footer" role="contentinfo">
+        <div class="container">
+            <div class="platform-footer-top">
+                <div class="platform-footer-brand">
+                    <a href="index.html" class="platform-logo" aria-label="Weddings by JOD home">
+                        <img class="platform-logo-img platform-logo-img--dark" src="images/logo/180X55_weddings_by_JOD_white.webp" width="180" height="55" alt="">
+                        <img class="platform-logo-img platform-logo-img--light" src="images/logo/180X55_weddings_by_JOD_black.webp" width="180" height="55" alt="">
+                    </a>
+                    <p class="footer-brand-desc">India's premier luxury wedding planning platform. Crafting bespoke celebrations since 2018.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/weddingsbyjod/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Weddings by JOD Instagram">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="2" y="2" width="16" height="16" rx="4" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="10" r="3.5" stroke="currentColor" stroke-width="1.5"/><circle cx="14.5" cy="5.5" r="1" fill="currentColor"/></svg>
+                        </a>
+                        <a href="https://wa.me/917395905064" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp +91 73959 05064">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2a8 8 0 016.68 12.38L18 18l-3.72-1.27A8 8 0 1110 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="platform-footer-links">
+                    <div class="footer-links-col">
+                        <h4>Platform</h4>
+                        <a href="about.html">Our Story</a>
+                        <a href="#services">Services</a>
+                        <a href="#customise">Customize Solution</a>
+                        <a href="templates.html">Templates</a>
+                        <a href="weddings.html">Our Celebrations</a>
+                    </div>
+                    <div class="footer-links-col">
+                        <h4>Connect</h4>
+                        <a href="testimonials.html">Testimonial</a>
+                        <a href="#consultation">Free Consultation</a>
+                        <a href="wedding.html" target="_blank">Live Wedding Portal</a>
+                        <a href="mailto:hello@jodweddings.in">hello@jodweddings.in</a>
+                    </div>
+                    <div class="footer-links-col">
+                        <h4>Location</h4>
+                        <p class="footer-location-text">Chennai to Across the World</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="platform-footer-bottom">
+                <p>&copy; 2026 Weddings by JOD. All rights reserved. Crafting love stories since 2018.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast -->
+    <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+    <script type="module" src="js/jod-platform.js?v=17"></script>
+</body>
+</html>

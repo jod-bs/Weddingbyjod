@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="/images/logo/weddings_by_jod_icon.webp">
+    <title>Neon Night</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="nn" data-template-name="Neon Night" data-template-slug="neon">
+    <header class="nn-bar">
+        <strong data-text="couple.full"></strong>
+        <nav>
+            <a href="#story">Our story</a>
+            <a href="#lineup">Lineup</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#rsvp">RSVP</a>
+        </nav>
+        <a class="nn-chip" href="#rsvp">RSVP</a>
+    </header>
+    <section class="nn-hero">
+        <img class="nn-crowd" src="/assets/images/event-sangeet.jpg" alt="">
+        <div class="nn-veil"></div>
+        <div class="nn-board">
+            <p>The baraat is going electric</p>
+            <h1><span data-text="couple.partner1"></span> &amp; <span data-text="couple.partner2"></span></h1>
+            <p class="nn-script">the night we turn the volume up</p>
+            <p class="nn-meta"><span data-text="date"></span> · <span data-text="venueName"></span></p>
+            <div class="nn-cta">
+                <a class="nn-btn" href="#rsvp">RSVP &amp; reserve the floor</a>
+                <a class="nn-btn nn-ghost" href="#lineup">See the lineup</a>
+            </div>
+        </div>
+    </section>
+    <section id="story" class="nn-story">
+        <h2>How we found the volume</h2>
+        <p data-text="story"></p>
+    </section>
+    <section id="lineup" class="nn-line">
+        <h2>Lineup</h2>
+        <div data-repeat="events">
+            <article>
+                <b>{{n}}</b>
+                <h3>{{item.name}}</h3>
+                <p>{{item.time}} · {{item.venue}}</p>
+            </article>
+        </div>
+        <ol data-repeat="playlist">
+            <li><strong>{{item.title}}</strong><span>{{item.mood}}</span></li>
+        </ol>
+    </section>
+    <section id="gallery" class="nn-gal" data-repeat="gallery">
+        <img src="{{item.src}}" alt="{{item.caption}}">
+    </section>
+    <section id="rsvp" class="nn-rsvp">
+        <h2>Reserve the floor</h2>
+        <form class="jod-rsvp">
+            <input name="name" required placeholder="Name">
+            <button type="submit">I’m in</button>
+        </form>
+        <p class="jod-thanks" hidden>You’re on the guest list. Come loud.</p>
+    </section>
+    <script src="/js/wedding-data.js"></script>
+    <script src="/js/preview-toolbar.js"></script>
+</body>
+</html>

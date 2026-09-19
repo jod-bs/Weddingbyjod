@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="/images/logo/weddings_by_jod_icon.webp">
+    <title>Botanical</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bo" data-template-name="Botanical" data-template-slug="botanical">
+    <svg class="bo-leaf" viewBox="0 0 200 600" aria-hidden="true"><path d="M40 20 C120 80 20 180 90 250 C160 320 40 420 110 580" fill="none" stroke="currentColor" stroke-width="1.4"/><ellipse cx="70" cy="120" rx="28" ry="14" transform="rotate(-30 70 120)" fill="currentColor" opacity=".25"/><ellipse cx="120" cy="260" rx="34" ry="16" transform="rotate(25 120 260)" fill="currentColor" opacity=".2"/><ellipse cx="60" cy="400" rx="26" ry="13" transform="rotate(-20 60 400)" fill="currentColor" opacity=".22"/></svg>
+    <header class="bo-hero">
+        <nav>
+            <a href="#path">The path</a>
+            <a href="#markers">Markers</a>
+            <a href="#grove">Grove</a>
+            <a href="#rsvp">Join us</a>
+        </nav>
+        <p>A garden gathering</p>
+        <h1><span data-text="couple.partner1"></span> &amp; <span data-text="couple.partner2"></span></h1>
+        <figure class="bo-blob">
+            <img data-src="heroImage" alt="">
+        </figure>
+    </header>
+    <section id="path" class="bo-path">
+        <article class="bo-stop s1">
+            <h2>Where the path starts</h2>
+            <p data-text="story"></p>
+        </article>
+        <div class="bo-stop s2" data-repeat="chapters">
+            <article>
+                <h3>{{item.title}}</h3>
+                <p>{{item.body}}</p>
+            </article>
+        </div>
+    </section>
+    <section id="markers" class="bo-mark">
+        <h2>Along the way</h2>
+        <div class="bo-markers" data-repeat="events">
+            <article>
+                <i></i>
+                <h3>{{item.name}}</h3>
+                <p>{{item.time}} · {{item.venue}}</p>
+            </article>
+        </div>
+    </section>
+    <section id="grove" class="bo-grove" data-repeat="gallery">
+        <img src="{{item.src}}" alt="{{item.caption}}">
+    </section>
+    <section id="rsvp" class="bo-end">
+        <h2>Come into the garden</h2>
+        <form class="jod-rsvp">
+            <input name="name" required placeholder="Name">
+            <button type="submit">I’m coming</button>
+        </form>
+        <p class="jod-thanks" hidden>We’ll save you a place under the trees.</p>
+    </section>
+    <script src="/js/wedding-data.js"></script>
+    <script src="/js/preview-toolbar.js"></script>
+</body>
+</html>

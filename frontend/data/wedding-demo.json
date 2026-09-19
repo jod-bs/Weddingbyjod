@@ -1,0 +1,59 @@
+{
+  "id": "krithish-priya",
+  "template": null,
+  "couple": {
+    "partner1": "Groom",
+    "partner2": "Bride",
+    "ampersand": "&",
+    "full": "Groom & Bride"
+  },
+  "tagline": "Two families, one celebration",
+  "date": "12 September 2026",
+  "dateShort": "12.09.2026",
+  "dateISO": "2026-09-12T09:30:00+05:30",
+  "city": "Chennai",
+  "venueName": "Temple Gardens, Mahabalipuram",
+  "coordinates": "12.6269° N, 80.1927° E",
+  "destination": "Goa",
+  "heroImage": "/assets/images/hero-couple.jpg",
+  "storyImage": "/assets/images/event-wedding.jpg",
+  "story": "They met between library hours and late-night filter coffee. What followed was a slow, certain kind of love — letters, coastal drives, and a promise made at golden hour. This celebration is for everyone who walked beside them.",
+  "storyShort": "A slow, certain kind of love — letters, coastal drives, and a promise at golden hour.",
+  "chapters": [
+    { "n": "01", "title": "How We Met", "body": "A shared desk, a borrowed pen, and a conversation that refused to end." },
+    { "n": "02", "title": "The Journey", "body": "Five years of cities, kitchens, and choosing each other again." },
+    { "n": "03", "title": "The Celebration", "body": "Families braided together across languages, rituals, and playlists." },
+    { "n": "04", "title": "The Day", "body": "12 September 2026 — vows at Temple Gardens, then dancing until the lamps dim." }
+  ],
+  "journey": [
+    { "place": "Chennai", "note": "Where the story started" },
+    { "place": "Bengaluru", "note": "The years we grew up" },
+    { "place": "Goa", "note": "The weekend we said yes" },
+    { "place": "Forever", "note": "Everything after" }
+  ],
+  "events": [
+    { "name": "Mehendi", "date": "10 September 2026", "time": "10:00 AM", "venue": "Grand Ballroom", "note": "Turmeric, songs, and open palms.", "code": "MEH" },
+    { "name": "Sangeet", "date": "11 September 2026", "time": "7:00 PM", "venue": "Crystal Hall", "note": "A night built for dancing.", "code": "SNG" },
+    { "name": "Wedding", "date": "12 September 2026", "time": "9:30 AM", "venue": "Temple Gardens", "note": "The vows, under the trees.", "code": "WDN" },
+    { "name": "Reception", "date": "12 September 2026", "time": "7:00 PM", "venue": "The Pavilion", "note": "Dinner, speeches, last dance.", "code": "RCP" }
+  ],
+  "playlist": [
+    { "title": "First dance", "mood": "Slow" },
+    { "title": "Family medley", "mood": "Loud" },
+    { "title": "After-midnight set", "mood": "Wild" }
+  ],
+  "gallery": [
+    { "src": "/assets/images/hero-couple.jpg", "caption": "The portrait" },
+    { "src": "/assets/images/event-wedding.jpg", "caption": "The vows" },
+    { "src": "/assets/images/event-sangeet.jpg", "caption": "The night" },
+    { "src": "/assets/images/event-mehendi.jpg", "caption": "The colour" },
+    { "src": "/assets/images/event-reception.jpg", "caption": "The table" }
+  ],
+  "faq": [
+    { "q": "What should we wear?", "a": "Jewel tones for evening events; light cottons for the morning ceremony." },
+    { "q": "Are children welcome?", "a": "Yes — the gardens have a quiet play corner during vows." },
+    { "q": "Where do we stay?", "a": "A guest list of nearby hotels is in your invitation note." }
+  ],
+  "dressCode": "Evening: black tie optional. Morning: pastel or ivory.",
+  "hashtag": "#GroomAndBride"
+}

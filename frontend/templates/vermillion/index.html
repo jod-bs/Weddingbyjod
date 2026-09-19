@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="/images/logo/weddings_by_jod_icon.webp">
+    <title>Vermillion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Tiro+Devanagari+Hindi&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="vm" data-template-name="Vermillion" data-template-slug="vermillion">
+    <div class="vm-stripe" aria-hidden="true"></div>
+    <header class="vm-hero">
+        <p class="vm-kicker">सिन्दूर · a red beginning</p>
+        <h1><span data-text="couple.partner1"></span> <i>&amp;</i> <span data-text="couple.partner2"></span></h1>
+        <p class="vm-meta"><span data-text="date"></span> · <span data-text="city"></span></p>
+        <nav>
+            <a href="#story">The cloth</a>
+            <a href="#events">Rituals</a>
+            <a href="#gallery">Colour</a>
+            <a href="#rsvp">Bless</a>
+        </nav>
+    </header>
+    <div class="vm-invite">
+        <figure>
+            <img data-src="heroImage" data-alt="couple.full" alt="">
+        </figure>
+        <div class="vm-invite-copy">
+            <p class="vm-label">An invitation in vermillion</p>
+            <p data-text="tagline"></p>
+            <div class="vm-count">
+                <b data-count="days">00</b>
+                <span>days of red</span>
+            </div>
+        </div>
+    </div>
+    <section id="story" class="vm-story">
+        <h2>Woven of two houses</h2>
+        <p data-text="story"></p>
+    </section>
+    <section id="events" class="vm-events">
+        <h2>Border rituals</h2>
+        <div data-repeat="events">
+            <article>
+                <span>{{n}}</span>
+                <div>
+                    <h3>{{item.name}}</h3>
+                    <p>{{item.date}} · {{item.time}}</p>
+                    <p>{{item.venue}}</p>
+                </div>
+            </article>
+        </div>
+    </section>
+    <section id="gallery" class="vm-gal" data-repeat="gallery">
+        <figure>
+            <img src="{{item.src}}" alt="{{item.caption}}">
+            <figcaption>{{item.caption}}</figcaption>
+        </figure>
+    </section>
+    <section id="rsvp" class="vm-rsvp">
+        <div class="vm-card">
+            <h2>Place your mark</h2>
+            <form class="jod-rsvp">
+                <input name="name" required placeholder="Name">
+                <select name="yes" required>
+                    <option value="">Will you attend?</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+                <button type="submit">Send in red</button>
+            </form>
+            <p class="jod-thanks" hidden>Your blessing is received in vermillion.</p>
+        </div>
+    </section>
+    <footer class="vm-foot">
+        <span data-text="couple.full"></span>
+        <span data-text="hashtag"></span>
+    </footer>
+    <script src="/js/wedding-data.js"></script>
+    <script src="/js/preview-toolbar.js"></script>
+</body>
+</html>

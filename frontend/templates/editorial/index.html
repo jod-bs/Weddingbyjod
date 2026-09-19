@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="/images/logo/weddings_by_jod_icon.webp">
+    <title>The Wedding Issue — Editorial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;1,6..72,300&family=Syne:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="ed" data-template-name="Editorial" data-template-slug="editorial">
+    <header class="ed-mast">
+        <p class="ed-issue">Vol. 01 · The Wedding Issue</p>
+        <nav class="ed-nav">
+            <a href="#story">Story</a>
+            <a href="#events">Programme</a>
+            <a href="#gallery">Portfolio</a>
+            <a href="#rsvp">Subscribe</a>
+        </nav>
+        <span class="ed-date" data-text="dateShort"></span>
+    </header>
+
+    <section class="ed-hero">
+        <div class="ed-hero-type">
+            <p class="ed-kicker">THE</p>
+            <h1>WEDDING<br>ISSUE</h1>
+            <p class="ed-byline"><span data-text="couple.partner1"></span><br>&amp;<br><span data-text="couple.partner2"></span></p>
+        </div>
+        <figure class="ed-hero-fig">
+            <img data-src="heroImage" data-alt="couple.full" alt="">
+            <figcaption>Cover · <span data-text="city"></span> · <span data-text="date"></span></figcaption>
+        </figure>
+    </section>
+
+    <section class="ed-spread" id="story">
+        <p class="ed-num">01 / OUR STORY</p>
+        <h2 class="ed-spread-title">A correspondence<br>in slow time</h2>
+        <div class="ed-spread-grid">
+            <p class="ed-drop" data-text="story"></p>
+            <figure>
+                <img data-src="storyImage" alt="">
+                <figcaption>Plate II — the gardens</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section class="ed-cols" id="events">
+        <p class="ed-num">02 / PROGRAMME</p>
+        <div class="ed-col-grid" data-repeat="events">
+            <article>
+                <span>{{n}}</span>
+                <h3>{{item.name}}</h3>
+                <p>{{item.date}} · {{item.time}}</p>
+                <p>{{item.venue}}</p>
+                <em>{{item.note}}</em>
+            </article>
+        </div>
+    </section>
+
+    <section class="ed-folio" id="gallery">
+        <p class="ed-num">03 / PORTFOLIO</p>
+        <div class="ed-folio-grid" data-repeat="gallery">
+            <figure>
+                <img src="{{item.src}}" alt="{{item.caption}}">
+                <figcaption>{{item.caption}}</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section class="ed-sub" id="rsvp">
+        <div class="ed-sub-card">
+            <p class="ed-num">04 / RSVP</p>
+            <h2>Request a seat<br>at the table</h2>
+            <form class="jod-rsvp">
+                <label>Full name<input name="name" required></label>
+                <label>Will you attend?
+                    <select name="yes" required>
+                        <option value="">Select</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </label>
+                <button type="submit">Confirm attendance</button>
+            </form>
+            <p class="jod-thanks" hidden>Your place is reserved. See you in print.</p>
+        </div>
+    </section>
+
+    <footer class="ed-foot">
+        <span data-text="couple.full"></span>
+        <span>All rights reserved · A JOD design system</span>
+    </footer>
+    <script src="/js/wedding-data.js"></script>
+    <script src="/js/preview-toolbar.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>

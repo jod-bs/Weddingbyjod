@@ -1,0 +1,38 @@
+.hg{margin:0;background:#f3ead7;color:#3b2418;font-family:Cormorant Garamond,serif}
+.hg-frame{margin:1.2rem;border:1px solid #8b5a2b;padding:1.2rem;min-height:calc(100vh - 2.4rem);background:
+    linear-gradient(#f3ead7,#f3ead7) padding-box,
+    repeating-linear-gradient(90deg,#8b5a2b 0 8px,transparent 8px 16px) border-box}
+.hg-hero{text-align:center;padding:6vh 1rem 4vh}
+.hg-motif{width:220px;color:#8b5a2b}
+.hg-sanskrit{font-family:'Tiro Devanagari Hindi',serif;font-size:1.3rem;margin:.4rem 0 1rem}
+.hg-hero h1{font-size:clamp(2.6rem,7vw,5rem);font-weight:400;line-height:1.05;margin:0}
+.hg-hero em{font-style:italic;color:#8b5a2b}
+.hg-nav{display:flex;justify-content:center;gap:1.6rem;margin-top:2rem;letter-spacing:.2em;text-transform:uppercase;font-size:.72rem}
+.hg a{color:inherit;text-decoration:none}
+.hg-ms{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;padding:6vh 6vw;border-top:1px solid rgba(139,90,43,.35)}
+.hg-ms h2{font-size:2.4rem;font-weight:400}
+.hg-ms p{line-height:1.85;font-size:1.15rem}
+.hg-ms p::first-letter{font-size:3.4rem;float:left;line-height:.8;padding:.1rem .45rem 0 0;color:#8b5a2b;font-style:italic}
+.hg-oval{margin:0;border-radius:50% 50% 50% 50%/42% 42% 58% 58%;overflow:hidden;border:8px solid #efe3c9;height:420px}
+.hg-oval img{width:100%;height:100%;object-fit:cover}
+.hg-vidhi{padding:6vh 8vw}
+.hg-vidhi ol{list-style:none;padding:0}
+.hg-vidhi li{display:grid;grid-template-columns:80px 1fr;gap:1.2rem;padding:1.4rem 0;border-bottom:1px dashed rgba(139,90,43,.4)}
+.hg-vidhi span{font-size:2rem;color:#8b5a2b}
+.hg-darshan{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;padding:2rem 6vw 5rem}
+.hg-darshan figure{margin:0;border:1px solid rgba(139,90,43,.3);padding:.4rem}
+.hg-darshan img{width:100%;height:180px;object-fit:cover}
+.hg-darshan figcaption{text-align:center;font-style:italic;padding:.4rem}
+.hg-rsvp{text-align:center;padding:4rem 1rem 6rem;border-top:1px solid rgba(139,90,43,.35)}
+.hg-rsvp form{display:flex;flex-direction:column;gap:.7rem;width:min(380px,90%);margin:1.2rem auto}
+.hg-rsvp input,.hg-rsvp button{padding:.8rem;border:1px solid #8b5a2b;background:#f8f0de;font:inherit}
+.hg-rsvp button{background:#8b5a2b;color:#f3ead7}
+@media (max-width:800px){
+    .hg-ms,.hg-darshan{grid-template-columns:1fr}
+    .hg-oval{height:300px}
+    .hg-nav{flex-wrap:wrap;gap:.8rem}
+    .hg-frame{margin:.6rem;padding:.7rem}
+}
+@media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+}

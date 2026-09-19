@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="/images/logo/weddings_by_jod_icon.webp">
+    <title>Celestial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="ce" data-template-name="Celestial" data-template-slug="celestial">
+    <header class="ce-hero">
+        <img class="ce-photo" data-src="heroImage" alt="">
+        <div class="ce-veil"></div>
+        <p class="ce-kicker">An evening to remember</p>
+        <h1><span data-text="couple.partner1"></span> &amp; <span data-text="couple.partner2"></span></h1>
+        <p class="ce-date" data-text="date"></p>
+        <p class="ce-place" data-text="venueName"></p>
+        <div class="ce-cta">
+            <a class="ce-gold" href="#rsvp">RSVP</a>
+            <a class="ce-line" href="#programme">View details</a>
+        </div>
+        <div class="ce-scroll">Scroll</div>
+    </header>
+    <nav class="ce-nav">
+        <a href="#story">Our story</a>
+        <a href="#programme">Programme</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#rsvp">RSVP</a>
+    </nav>
+    <section id="story" class="ce-story">
+        <p class="ce-label">Meet · Love · Promise · Wedding</p>
+        <h2>Written in low light</h2>
+        <p data-text="story"></p>
+    </section>
+    <section id="programme" class="ce-prog">
+        <h2>The evening</h2>
+        <ul data-repeat="events">
+            <li>
+                <span>{{item.time}}</span>
+                <strong>{{item.name}}</strong>
+                <em>{{item.venue}}</em>
+            </li>
+        </ul>
+    </section>
+    <section id="gallery" class="ce-still" data-repeat="gallery">
+        <img src="{{item.src}}" alt="{{item.caption}}">
+    </section>
+    <section id="rsvp" class="ce-rsvp">
+        <h2>Will you be there?</h2>
+        <form class="jod-rsvp">
+            <input name="name" required placeholder="Name">
+            <button type="submit">Confirm</button>
+        </form>
+        <p class="jod-thanks" hidden>We look forward to the evening.</p>
+    </section>
+    <script src="/js/wedding-data.js"></script>
+    <script src="/js/preview-toolbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="/images/logo/weddings_by_jod_icon.webp">
+    <title>Palms</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="pm" data-template-name="Palms" data-template-slug="palms">
+    <header class="pm-bar">
+        <strong data-text="couple.full"></strong>
+        <nav>
+            <a href="#story">Our story</a>
+            <a href="#events">Events</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#rsvp">RSVP</a>
+        </nav>
+        <a class="pm-chip" href="#rsvp">RSVP</a>
+    </header>
+    <section class="pm-hero">
+        <div class="pm-copy">
+            <span class="pm-lamp" aria-hidden="true"></span>
+            <p class="pm-kicker">By the backwaters, beneath the palms</p>
+            <h1><span data-text="couple.partner1"></span> &amp; <span data-text="couple.partner2"></span></h1>
+            <p class="pm-script">a quiet current, a long afternoon</p>
+            <p class="pm-time"><span data-text="dateShort"></span> · 09:30 AM</p>
+            <div class="pm-cta">
+                <a class="pm-btn" href="#rsvp">Kindly respond</a>
+                <a class="pm-btn pm-ghost" href="#events">The celebrations</a>
+            </div>
+        </div>
+        <figure>
+            <img data-src="storyImage" alt="">
+        </figure>
+    </section>
+    <section id="story" class="pm-story">
+        <h2>Under the canopy</h2>
+        <p data-text="story"></p>
+    </section>
+    <section id="events" class="pm-events">
+        <h2>Along the water</h2>
+        <div data-repeat="events">
+            <article>
+                <h3>{{item.name}}</h3>
+                <p>{{item.time}}</p>
+                <p>{{item.venue}}</p>
+            </article>
+        </div>
+    </section>
+    <section id="gallery" class="pm-gal" data-repeat="gallery">
+        <img src="{{item.src}}" alt="{{item.caption}}">
+    </section>
+    <section id="rsvp" class="pm-rsvp">
+        <h2>Kindly respond</h2>
+        <form class="jod-rsvp">
+            <input name="name" required placeholder="Name">
+            <button type="submit">Send</button>
+        </form>
+        <p class="jod-thanks" hidden>We’ll keep a place in the shade.</p>
+    </section>
+    <script src="/js/wedding-data.js"></script>
+    <script src="/js/preview-toolbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="/images/logo/weddings_by_jod_icon.webp">
+    <title>Orchid</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="or" data-template-name="Orchid" data-template-slug="orchid">
+    <aside class="or-ribbon">
+        <p data-text="dateShort"></p>
+        <nav>
+            <a href="#vow">Vow</a>
+            <a href="#jewels">Jewels</a>
+            <a href="#cut">Cut</a>
+            <a href="#rsvp">RSVP</a>
+        </nav>
+        <span data-text="hashtag"></span>
+    </aside>
+    <main class="or-main">
+        <header class="or-hero">
+            <p>an evening in orchid</p>
+            <h1><span data-text="couple.partner1"></span><br><span data-text="couple.partner2"></span></h1>
+            <figure>
+                <img data-src="heroImage" alt="">
+            </figure>
+        </header>
+        <section id="vow" class="or-vow">
+            <blockquote data-text="storyShort"></blockquote>
+            <p data-text="story"></p>
+        </section>
+        <section id="jewels" class="or-jewels" data-repeat="events">
+            <article>
+                <span>{{item.time}}</span>
+                <h3>{{item.name}}</h3>
+                <p>{{item.venue}}</p>
+            </article>
+        </section>
+        <section id="cut" class="or-cut" data-repeat="gallery">
+            <img src="{{item.src}}" alt="{{item.caption}}">
+        </section>
+        <section id="rsvp" class="or-rsvp">
+            <div class="or-box">
+                <h2>Request a place</h2>
+                <form class="jod-rsvp">
+                    <input name="name" required placeholder="Name">
+                    <button type="submit">Confirm</button>
+                </form>
+                <p class="jod-thanks" hidden>A jewel set aside for you.</p>
+            </div>
+        </section>
+    </main>
+    <script src="/js/wedding-data.js"></script>
+    <script src="/js/preview-toolbar.js"></script>
+</body>
+</html>

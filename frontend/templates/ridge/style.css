@@ -1,0 +1,32 @@
+.rg{margin:0;background:#f3ead6;color:#2b261c;font-family:Newsreader,serif}
+.rg a{color:inherit;text-decoration:none}
+.rg-bar{display:flex;justify-content:space-between;align-items:center;padding:.7rem 4vw;border-bottom:4px solid #c45c28;background:#f7f0e0;font-family:Oswald,sans-serif;letter-spacing:.12em;font-size:.72rem;text-transform:uppercase}
+.rg-bar nav{display:flex;gap:1.1rem}
+.rg-top-rsvp{background:#c45c28;color:#fff;padding:.35rem .8rem}
+.rg-hero{position:relative;min-height:88vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6rem 1.5rem 10rem;overflow:hidden}
+.rg-kicker{font-family:Oswald,sans-serif;letter-spacing:.28em;font-size:.72rem;margin:0}
+.rg-hero h1{font-family:Oswald,sans-serif;font-weight:500;font-size:clamp(3rem,9vw,6.4rem);letter-spacing:.04em;margin:.4rem 0;text-transform:uppercase}
+.rg-script{font-style:italic;font-size:1.5rem;color:#c45c28;margin:0 0 1rem}
+.rg-meta{font-family:Oswald,sans-serif;letter-spacing:.16em;font-size:.72rem}
+.rg-cta{display:flex;gap:.6rem;margin-top:1.4rem;flex-wrap:wrap;justify-content:center}
+.rg-btn{background:#c45c28;color:#fff;padding:.7rem 1.1rem;font-family:Oswald,sans-serif;letter-spacing:.12em;font-size:.78rem;text-transform:uppercase}
+.rg-ghost{background:transparent;border:1.5px solid #2b261c;color:#2b261c}
+.rg-sun{position:absolute;right:14vw;top:28%;width:88px;height:88px;border-radius:50%;background:#d9852a;z-index:1}
+.rg-mounts{position:absolute;left:0;right:0;bottom:0;width:100%;height:34vh}
+.rg-story,.rg-events,.rg-rsvp{padding:8vh 10vw;background:#f7f0e0}
+.rg-story h2,.rg-events h2,.rg-rsvp h2{font-family:Oswald,sans-serif;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+.rg-story p{max-width:54ch;line-height:1.75;font-size:1.1rem}
+.rg-events ol{list-style:none;padding:0}
+.rg-events li{display:flex;justify-content:space-between;gap:1rem;padding:1rem 0;border-bottom:1px solid #cfc3a8;font-size:1.15rem}
+.rg-gal{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}
+.rg-gal img{width:100%;height:150px;object-fit:cover;filter:sepia(.15)}
+.rg-rsvp form{display:flex;gap:.5rem;max-width:440px}
+.rg-rsvp input,.rg-rsvp button{padding:.8rem;border:1px solid #2b261c;font:inherit}
+.rg-rsvp button{background:#c45c28;color:#fff;font-family:Oswald,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+@media (max-width:800px){
+    .rg-bar{flex-wrap:wrap;gap:.5rem}
+    .rg-gal{grid-template-columns:1fr 1fr}
+    .rg-events li{flex-direction:column}
+    .rg-sun{width:56px;height:56px;right:8vw}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

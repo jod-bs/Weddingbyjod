@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="/images/logo/weddings_by_jod_icon.webp">
+    <title>Architectural</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400&family=IBM+Plex+Serif:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="ar" data-template-name="Architectural" data-template-slug="architectural">
+    <header class="ar-top">
+        <p data-text="couple.full"></p>
+        <nav>
+            <a href="#s">01</a>
+            <a href="#e">02</a>
+            <a href="#g">03</a>
+            <a href="#r">04</a>
+        </nav>
+    </header>
+    <section class="ar-hero">
+        <h1><span data-text="couple.partner1"></span><span data-text="couple.partner2"></span></h1>
+        <p data-text="dateShort"></p>
+    </section>
+    <figure class="ar-photo">
+        <img data-src="heroImage" alt="">
+    </figure>
+    <section id="s" class="ar-block">
+        <p>01 / Story</p>
+        <div class="ar-grid2">
+            <h2>Notes on a life</h2>
+            <p data-text="story"></p>
+        </div>
+    </section>
+    <section id="e" class="ar-block">
+        <p>02 / Schedule</p>
+        <table>
+            <tbody data-repeat="events">
+                <tr>
+                    <td>{{item.name}}</td>
+                    <td>{{item.date}}</td>
+                    <td>{{item.time}}</td>
+                    <td>{{item.venue}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section id="g" class="ar-block">
+        <p>03 / Index</p>
+        <div class="ar-index" data-repeat="gallery">
+            <img src="{{item.src}}" alt="{{item.caption}}">
+        </div>
+    </section>
+    <section id="r" class="ar-block ar-end">
+        <p>04 / Reply</p>
+        <form class="jod-rsvp">
+            <input name="name" required placeholder="Name">
+            <button type="submit">Submit</button>
+        </form>
+        <p class="jod-thanks" hidden>Logged.</p>
+    </section>
+    <script src="/js/wedding-data.js"></script>
+    <script src="/js/preview-toolbar.js"></script>
+</body>
+</html>

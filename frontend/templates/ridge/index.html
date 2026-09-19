@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="/images/logo/weddings_by_jod_icon.webp">
+    <title>Ridge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="rg" data-template-name="Ridge" data-template-slug="ridge">
+    <header class="rg-bar">
+        <strong data-text="couple.full"></strong>
+        <nav>
+            <a href="#story">Our story</a>
+            <a href="#events">Events</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#rsvp">RSVP</a>
+        </nav>
+        <a class="rg-top-rsvp" href="#rsvp">RSVP</a>
+    </header>
+    <section class="rg-hero">
+        <p class="rg-kicker">A lodge weekend in the hills</p>
+        <h1><span data-text="couple.partner1"></span> &amp; <span data-text="couple.partner2"></span></h1>
+        <p class="rg-script">meet us at the timberline</p>
+        <p class="rg-meta"><span data-text="date"></span> · <span data-text="venueName"></span></p>
+        <div class="rg-cta">
+            <a class="rg-btn" href="#rsvp">Save us a seat</a>
+            <a class="rg-btn rg-ghost" href="#events">The trail guide</a>
+        </div>
+        <span class="rg-sun" aria-hidden="true"></span>
+        <svg class="rg-mounts" viewBox="0 0 1200 280" preserveAspectRatio="none" aria-hidden="true">
+            <polygon points="0,280 180,110 320,200 480,70 700,190 860,90 1040,170 1200,80 1200,280" fill="#6d6a5c"/>
+            <polygon points="0,280 120,170 280,230 450,120 640,210 820,140 980,200 1200,130 1200,280" fill="#4f5348"/>
+            <polygon points="0,280 80,210 240,250 400,180 560,240 760,190 960,230 1200,170 1200,280" fill="#2f332e"/>
+        </svg>
+    </section>
+    <section id="story" class="rg-story">
+        <h2>Basecamp notes</h2>
+        <p data-text="story"></p>
+    </section>
+    <section id="events" class="rg-events">
+        <h2>Trail markers</h2>
+        <ol data-repeat="events">
+            <li>
+                <strong>{{item.name}}</strong>
+                <span>{{item.time}} · {{item.venue}}</span>
+            </li>
+        </ol>
+    </section>
+    <section id="gallery" class="rg-gal" data-repeat="gallery">
+        <img src="{{item.src}}" alt="{{item.caption}}">
+    </section>
+    <section id="rsvp" class="rg-rsvp">
+        <h2>Save a seat</h2>
+        <form class="jod-rsvp">
+            <input name="name" required placeholder="Name">
+            <button type="submit">I’m on the trail</button>
+        </form>
+        <p class="jod-thanks" hidden>Your bunk is marked.</p>
+    </section>
+    <script src="/js/wedding-data.js"></script>
+    <script src="/js/preview-toolbar.js"></script>
+</body>
+</html>

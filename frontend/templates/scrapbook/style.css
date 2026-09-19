@@ -1,0 +1,41 @@
+.sc{margin:0;background:#e8dcc8;color:#3a2f28;font-family:Fraunces,serif;background-image:radial-gradient(#d7c4a8 1px,transparent 1px);background-size:18px 18px}
+.sc a{color:inherit}
+.sc-cover{text-align:center;padding:9vh 1.5rem 4vh}
+.sc-hand{font-family:Caveat,cursive;font-size:1.7rem;margin:0}
+.sc-cover h1{font-weight:400;font-size:clamp(2.4rem,6vw,4.2rem);margin:.4rem 0}
+.sc-stamp{display:inline-block;border:2px dashed #8a5a3b;padding:.4rem .8rem;transform:rotate(-3deg);letter-spacing:.12em;text-transform:uppercase;font-size:.72rem}
+.sc-tabs{display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap;padding:1rem;position:sticky;top:0;background:rgba(232,220,200,.92);z-index:5}
+.sc-table{width:min(980px,92%);margin:2rem auto;display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;align-items:start}
+.sc-polaroid{background:#fff;padding:.7rem .7rem 1.4rem;box-shadow:0 10px 24px rgba(58,47,40,.18);position:relative}
+.sc-polaroid img{width:100%;aspect-ratio:1;object-fit:cover}
+.tape{position:absolute;top:-10px;left:36%;width:70px;height:22px;background:rgba(255,244,210,.7);transform:rotate(-8deg)}
+.t2{left:20%;transform:rotate(10deg)}
+.r-l{transform:rotate(-3.5deg)}
+.r-r{transform:rotate(2.8deg)}
+.sc-note{background:#fff8e8;padding:1.4rem;box-shadow:0 8px 18px rgba(58,47,40,.12);transform:rotate(1.5deg)}
+.sc-chapters{display:contents}
+.sc-chapter{background:#f7efe2;padding:1.2rem 1.3rem;border:1px solid #d3c2a8}
+.sc-pins{padding:4rem 6vw}
+.sc-pin-row{display:flex;flex-wrap:wrap;gap:1.2rem;justify-content:center}
+.sc-pin{width:200px;background:#fffdf8;padding:1.3rem 1rem 1.1rem;position:relative;box-shadow:0 8px 16px rgba(0,0,0,.08)}
+.pin{width:14px;height:14px;border-radius:50%;background:#c45c4a;display:block;margin:-1.6rem auto .8rem;box-shadow:0 2px 0 #7a3228}
+.sc-box{padding:2rem 6vw 5rem}
+.sc-scatter{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
+.sc-scatter .sc-polaroid{width:200px}
+.sc-scatter .sc-polaroid:nth-child(odd){transform:rotate(-4deg)}
+.sc-scatter .sc-polaroid:nth-child(even){transform:rotate(3deg)}
+.sc-rsvp{padding:2rem 1rem 6rem}
+.sc-paper{width:min(440px,92%);margin:0 auto;background:#fffdf7;padding:2rem;box-shadow:0 12px 28px rgba(0,0,0,.1);transform:rotate(-.8deg)}
+.sc-paper input,.sc-paper textarea,.sc-paper button{width:100%;margin:.5rem 0;border:0;border-bottom:1px solid #cbb89a;background:transparent;font:inherit;padding:.5rem 0}
+.sc-paper button{border:1px solid #3a2f28;margin-top:1rem;padding:.7rem}
+@media (max-width:760px){
+    .sc-table{grid-template-columns:1fr}
+    .r-l{transform:rotate(-2deg)}
+    .r-r{transform:rotate(1.6deg)}
+    .sc-note{transform:rotate(.6deg)}
+    .sc-scatter .sc-polaroid{width:46%}
+    .sc-tabs{gap:.7rem;font-size:.9rem}
+}
+@media (prefers-reduced-motion:reduce){
+    .r-l,.r-r,.sc-note,.sc-paper,.sc-scatter .sc-polaroid{transform:none}
+}

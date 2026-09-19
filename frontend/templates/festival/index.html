@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="/images/logo/weddings_by_jod_icon.webp">
+    <title>Festival</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="fe" data-template-name="Festival" data-template-slug="festival">
+    <div class="fe-marquee" aria-hidden="true"><span>MEHENDI · SANGEET · WEDDING · RECEPTION · DANCE · </span><span>MEHENDI · SANGEET · WEDDING · RECEPTION · DANCE · </span></div>
+    <header class="fe-hero">
+        <nav>
+            <a href="#lineup">Lineup</a>
+            <a href="#sangeet">Sangeet</a>
+            <a href="#shots">Shots</a>
+            <a href="#rsvp">I’m in</a>
+        </nav>
+        <p>THE BIG CELEBRATION</p>
+        <h1><span data-text="couple.partner1"></span><br><span data-text="couple.partner2"></span></h1>
+        <p class="fe-when" data-text="date"></p>
+        <a class="fe-cta" href="#rsvp">Get on the floor</a>
+    </header>
+    <section id="lineup" class="fe-line">
+        <h2>Lineup</h2>
+        <div class="fe-cards" data-repeat="events">
+            <article>
+                <b>{{n}}</b>
+                <h3>{{item.name}}</h3>
+                <p>{{item.time}}</p>
+                <p>{{item.venue}}</p>
+            </article>
+        </div>
+    </section>
+    <section id="sangeet" class="fe-sang">
+        <h2>Sangeet night</h2>
+        <ol data-repeat="playlist">
+            <li><strong>{{item.title}}</strong><span>{{item.mood}}</span></li>
+        </ol>
+        <form class="fe-request" onsubmit="event.preventDefault(); this.reset(); this.nextElementSibling.hidden=false;">
+            <input name="song" placeholder="Request a song" required>
+            <button type="submit">Add to set</button>
+        </form>
+        <p hidden>Queued. The DJ has it.</p>
+    </section>
+    <section id="shots" class="fe-shots" data-repeat="gallery">
+        <img src="{{item.src}}" alt="{{item.caption}}">
+    </section>
+    <section id="rsvp" class="fe-rsvp">
+        <h2>Count me in</h2>
+        <form class="jod-rsvp">
+            <input name="name" required placeholder="Your name">
+            <button type="submit">Let’s go</button>
+        </form>
+        <p class="jod-thanks" hidden>You’re on the guest list. Come ready to dance.</p>
+    </section>
+    <script src="/js/wedding-data.js"></script>
+    <script src="/js/preview-toolbar.js"></script>
+</body>
+</html>

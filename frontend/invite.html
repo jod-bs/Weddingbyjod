@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="/images/logo/weddings_by_jod_icon.webp">
+    <title>Personal Invitation — Krithish &amp; Priya Wedding</title>
+    <meta name="description" content="Your personal wedding invitation for Krithish & Priya's wedding celebrations.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/design-system.css?v=8">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body style="background: var(--obsidian); min-height: 100vh;">
+
+    <main class="invite-hero">
+        <div class="invite-card">
+            <p class="invite-greeting">A Bespoke Wedding Invitation</p>
+            <h1 id="invite-guest-name" class="invite-guest-name">Valued Guest</h1>
+
+            <p id="invite-custom-message" class="invite-message">
+                Together with our beloved parents, we warmly invite you to share in our laughter, witness our sacred vows, and celebrate the union of our families.
+            </p>
+
+            <div style="background: rgba(201,169,110,0.08); border: 1px solid var(--gold-border); border-radius: var(--radius-md); padding: var(--space-4); margin-bottom: var(--space-8); display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 12px;">
+                <div>
+                    <span style="font-size: 11px; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; display: block;">Seats Reserved</span>
+                    <strong id="invite-max-guests" style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--ivory);">2 Seats</strong>
+                </div>
+                <div style="width: 1px; height: 32px; background: var(--gold-border);"></div>
+                <div>
+                    <span style="font-size: 11px; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; display: block;">Reception Table</span>
+                    <strong id="invite-table-info" style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--ivory);">Table 12</strong>
+                </div>
+            </div>
+
+            <p style="font-size: var(--text-xs); letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: var(--space-4); text-align: left;">
+                Celebrations You Are Cordially Invited To:
+            </p>
+
+            <div id="invite-events-list" class="invite-events">
+                <!-- Mehendi -->
+                <div class="invite-event-item invited">
+                    <div class="invite-event-check" aria-hidden="true">&#10003;</div>
+                    <div>
+                        <div class="invite-event-name">Mehendi Ceremony</div>
+                        <div class="invite-event-detail">Thu, 10 Sep &bull; 10:00 AM &bull; ITC Grand Chola</div>
+                    </div>
+                </div>
+
+                <!-- Sangeet -->
+                <div class="invite-event-item invited">
+                    <div class="invite-event-check" aria-hidden="true">&#10003;</div>
+                    <div>
+                        <div class="invite-event-name">Musical Sangeet</div>
+                        <div class="invite-event-detail">Fri, 11 Sep &bull; 07:00 PM &bull; ITC Grand Chola</div>
+                    </div>
+                </div>
+
+                <!-- Wedding Ceremony -->
+                <div class="invite-event-item invited">
+                    <div class="invite-event-check" aria-hidden="true">&#10003;</div>
+                    <div>
+                        <div class="invite-event-name">Traditional Wedding Ceremony</div>
+                        <div class="invite-event-detail">Sat, 12 Sep &bull; 09:30 AM &bull; Temple Gardens, Mahabalipuram</div>
+                    </div>
+                </div>
+
+                <!-- Reception -->
+                <div class="invite-event-item invited">
+                    <div class="invite-event-check" aria-hidden="true">&#10003;</div>
+                    <div>
+                        <div class="invite-event-name">Grand Wedding Reception</div>
+                        <div class="invite-event-detail">Sat, 12 Sep &bull; 07:30 PM &bull; ITC Grand Chola</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+                <a id="invite-rsvp-action" href="index.html#rsvp" class="btn btn-primary">Confirm Your Attendance</a>
+                <a href="index.html" class="btn btn-secondary">Explore Wedding Website</a>
+            </div>
+
+            <div style="margin-top: var(--space-8); text-align: center;">
+                <p style="font-family: var(--font-script); font-size: 1.75rem; color: var(--gold);">Krithish &amp; Priya</p>
+                <p style="font-size: 11px; letter-spacing: 0.2em; color: rgba(245,239,228,0.4); text-transform: uppercase;">#KrithishWedsPriya</p>
+            </div>
+        </div>
+    </main>
+
+    <script type="module">
+        import { guestApi } from './js/api.js';
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const params = new URLSearchParams(window.location.search);
+            const token = params.get('token');
+            const nameParam = params.get('name');
+
+            const nameEl = document.getElementById('invite-guest-name');
+            const msgEl = document.getElementById('invite-custom-message');
+            const guestsEl = document.getElementById('invite-max-guests');
+            const tableEl = document.getElementById('invite-table-info');
+            const rsvpAction = document.getElementById('invite-rsvp-action');
+
+            if (token) {
+                try {
+                    const guest = await guestApi.getByToken(token);
+                    if (guest) {
+                        nameEl.textContent = guest.name || guest.full_name;
+                        if (guest.custom_message) msgEl.textContent = guest.custom_message;
+                        if (guest.max_guests) guestsEl.textContent = `${guest.max_guests} Seats`;
+                        if (guest.table_number) tableEl.textContent = `Table ${guest.table_number}`;
+                        if (rsvpAction) rsvpAction.href = `index.html#rsvp?name=${encodeURIComponent(guest.name || '')}`;
+                        return;
+                    }
+                } catch {
+                    // Fallback to nameParam or defaults
+                }
+            }
+
+            if (nameParam) {
+                nameEl.textContent = decodeURIComponent(nameParam);
+                if (rsvpAction) rsvpAction.href = `index.html#rsvp?name=${encodeURIComponent(nameParam)}`;
+            } else {
+                nameEl.textContent = 'Esteemed Guest & Family';
+            }
+        });
+    </script>
+</body>
+</html>

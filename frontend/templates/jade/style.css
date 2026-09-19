@@ -1,0 +1,35 @@
+.jd{margin:0;background:#e7f3ea;color:#143d2c;font-family:Manrope,sans-serif}
+.jd a{color:inherit;text-decoration:none}
+.jd-hero{min-height:100vh;padding:1.5rem 6vw 6vh;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:2rem;position:relative}
+.jd-hero nav{position:absolute;top:1.5rem;right:6vw;display:flex;gap:1.1rem;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase}
+.jd-ring{width:min(460px,90%);aspect-ratio:1;border:2px solid #1f6b4a;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;justify-self:center}
+.jd-ring p{letter-spacing:.18em;text-transform:uppercase;font-size:.7rem;margin:0}
+.jd-ring h1{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.05;margin:.6rem 0}
+.jd-ring em{color:#1f6b4a;font-style:italic}
+.jd-coin{margin:0;width:min(340px,80%);aspect-ratio:1;border-radius:50%;overflow:hidden;border:10px solid #cfe6d6;justify-self:center}
+.jd-coin img{width:100%;height:100%;object-fit:cover}
+.jd-story{padding:8vh 16vw;text-align:center}
+.jd-story h2{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:400}
+.jd-story p{line-height:1.8;font-size:1.1rem}
+.jd-petals{padding:4vh 8vw 8vh}
+.jd-petals h2{text-align:center;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:2.2rem}
+.jd-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;max-width:820px;margin:2rem auto 0}
+.jd-grid article{background:#fff;border-radius:50% 50% 46% 54%/42% 58% 42% 58%;padding:2.4rem 1.6rem 2rem;text-align:center;border:1px solid #b7d7c4}
+.jd-grid article:nth-child(2n){border-radius:46% 54% 50% 50%/58% 42% 58% 42%;background:#1f6b4a;color:#e7f3ea}
+.jd-grid i{display:block;width:10px;height:10px;border-radius:50%;background:#1f6b4a;margin:0 auto 1rem}
+.jd-grid article:nth-child(2n) i{background:#e7f3ea}
+.jd-grove{column-count:3;column-gap:.8rem;padding:1rem 8vw 5rem}
+.jd-grove img{width:100%;margin:0 0 .8rem;border-radius:50%;break-inside:avoid;aspect-ratio:1;object-fit:cover}
+.jd-grove img:nth-child(2n){border-radius:40%}
+.jd-rsvp{text-align:center;padding:4rem 1.5rem 7rem}
+.jd-rsvp h2{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:400}
+.jd-rsvp form{display:flex;justify-content:center;gap:.5rem;margin-top:1rem;flex-wrap:wrap}
+.jd-rsvp input,.jd-rsvp button{border:1px solid #1f6b4a;border-radius:999px;padding:.8rem 1.2rem;font:inherit;background:#fff}
+.jd-rsvp button{background:#1f6b4a;color:#e7f3ea}
+@media (max-width:800px){
+    .jd-hero{grid-template-columns:1fr;padding-top:5rem}
+    .jd-hero nav{right:auto;left:6vw;flex-wrap:wrap}
+    .jd-grid,.jd-grove{grid-template-columns:1fr 1fr;column-count:2}
+    .jd-ring{width:min(320px,92%)}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

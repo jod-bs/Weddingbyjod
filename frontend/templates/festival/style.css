@@ -1,0 +1,33 @@
+.fe{margin:0;background:#111;color:#fff;font-family:Poppins,sans-serif}
+.fe a{color:inherit;text-decoration:none}
+.fe-marquee{overflow:hidden;white-space:nowrap;background:#ff3d6e;color:#111;font-family:Anton,sans-serif;font-size:1.4rem;letter-spacing:.08em;padding:.4rem 0}
+.fe-marquee span{display:inline-block;padding-left:100%;animation:fe-m 14s linear infinite}
+@keyframes fe-m{to{transform:translateX(-100%)}}
+.fe-hero{min-height:88vh;padding:4rem 6vw;display:flex;flex-direction:column;justify-content:flex-end;background:
+    linear-gradient(160deg,#1a1030 0%,#111 40%,#ff3d6e 140%),
+    url('/assets/images/event-sangeet.jpg') center/cover}
+.fe-hero nav{position:absolute;top:3.2rem;right:6vw;display:flex;gap:1rem;font-size:.8rem;font-weight:600}
+.fe-hero h1{font-family:Anton,sans-serif;font-size:clamp(4rem,14vw,9rem);line-height:.85;margin:.2rem 0;text-transform:uppercase}
+.fe-cta{align-self:flex-start;margin-top:1.4rem;background:#ffe14a;color:#111;font-weight:800;padding:.85rem 1.3rem;border-radius:999px}
+.fe-line{padding:6vh 6vw;background:#ffe14a;color:#111}
+.fe-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem}
+.fe-cards article{background:#111;color:#fff;padding:1.4rem;min-height:220px;display:flex;flex-direction:column;justify-content:flex-end;transform:rotate(-1.5deg)}
+.fe-cards article:nth-child(2n){transform:rotate(1.8deg);background:#ff3d6e}
+.fe-cards b{font-family:Anton,sans-serif;font-size:2.4rem}
+.fe-sang{padding:7vh 6vw}
+.fe-sang ol{list-style:none;padding:0}
+.fe-sang li{display:flex;justify-content:space-between;padding:1rem 0;border-bottom:2px solid #ff3d6e;font-size:1.2rem}
+.fe-request{display:flex;gap:.5rem;margin-top:1.4rem}
+.fe-request input,.fe-request button,.fe-rsvp input,.fe-rsvp button{border:0;padding:.85rem 1rem;font:inherit}
+.fe-request button,.fe-rsvp button{background:#ff3d6e;color:#fff;font-weight:700}
+.fe-shots{display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:180px;gap:6px;padding:0 6vw 4rem}
+.fe-shots img{width:100%;height:100%;object-fit:cover}
+.fe-shots img:first-child{grid-row:span 2}
+.fe-rsvp{padding:4rem 6vw 7rem;background:#ff3d6e}
+.fe-rsvp h2{font-family:Anton,sans-serif;font-size:clamp(3rem,8vw,6rem);text-transform:uppercase;margin:0 0 1rem}
+@media (max-width:800px){
+    .fe-cards,.fe-shots{grid-template-columns:1fr 1fr}
+    .fe-shots img:first-child{grid-row:auto}
+    .fe-hero h1{font-size:18vw}
+}
+@media (prefers-reduced-motion:reduce){.fe-marquee span{animation:none;padding-left:0}}

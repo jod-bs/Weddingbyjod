@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="/images/logo/weddings_by_jod_icon.webp">
+    <title>Heritage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="hg" data-template-name="Indian Heritage" data-template-slug="heritage">
+    <div class="hg-frame">
+        <header class="hg-hero">
+            <svg class="hg-motif" viewBox="0 0 200 40" aria-hidden="true"><path d="M2 20 Q50 2 100 20 T198 20" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="100" cy="20" r="4"/></svg>
+            <p class="hg-sanskrit">शुभ विवाह</p>
+            <h1><span data-text="couple.partner1"></span><br><em>&amp;</em><br><span data-text="couple.partner2"></span></h1>
+            <p class="hg-meta"><span data-text="date"></span> · <span data-text="city"></span></p>
+            <nav class="hg-nav">
+                <a href="#patra">Patra</a>
+                <a href="#vidhi">Vidhi</a>
+                <a href="#darshan">Darshan</a>
+                <a href="#niyati">Niyati</a>
+            </nav>
+        </header>
+        <section id="patra" class="hg-ms">
+            <div class="hg-ms-col">
+                <h2>A letter of two houses</h2>
+                <p data-text="story"></p>
+            </div>
+            <figure class="hg-oval">
+                <img data-src="heroImage" alt="">
+            </figure>
+        </section>
+        <section id="vidhi" class="hg-vidhi">
+            <h2>Ceremonial chapters</h2>
+            <ol data-repeat="events">
+                <li>
+                    <span>{{n}}</span>
+                    <div>
+                        <h3>{{item.name}}</h3>
+                        <p>{{item.date}} · {{item.time}}</p>
+                        <p>{{item.venue}}</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+        <section id="darshan" class="hg-darshan" data-repeat="gallery">
+            <figure><img src="{{item.src}}" alt="{{item.caption}}"><figcaption>{{item.caption}}</figcaption></figure>
+        </section>
+        <section id="niyati" class="hg-rsvp">
+            <h2>Kindly honour us</h2>
+            <form class="jod-rsvp">
+                <input name="name" placeholder="Name" required>
+                <input name="side" placeholder="Bride / Groom side">
+                <button type="submit">Send blessings</button>
+            </form>
+            <p class="jod-thanks" hidden>Your blessing is received.</p>
+        </section>
+    </div>
+    <script src="/js/wedding-data.js"></script>
+    <script src="/js/preview-toolbar.js"></script>
+</body>
+</html>

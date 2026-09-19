@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="/images/logo/weddings_by_jod_icon.webp">
+    <title>A Wedding Film — Cinematic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="cin" data-template-name="Cinematic" data-template-slug="cinematic">
+    <nav class="cin-nav">
+        <a href="#top">Film</a>
+        <a href="#c1">I</a>
+        <a href="#c2">II</a>
+        <a href="#c3">III</a>
+        <a href="#c4">IV</a>
+        <a href="#rsvp">Credits</a>
+    </nav>
+
+    <section class="cin-scene cin-hero" id="top">
+        <img class="cin-bg" data-src="heroImage" alt="">
+        <div class="cin-veil"></div>
+        <div class="cin-credits">
+            <p>A celebration by</p>
+            <h1><span data-text="couple.partner1"></span><em>and</em><span data-text="couple.partner2"></span></h1>
+        </div>
+        <p class="cin-bottom" data-text="date"></p>
+        <div class="cin-scroll">Scroll</div>
+    </section>
+
+    <section class="cin-scene" id="c1">
+        <img class="cin-bg" data-src="storyImage" alt="">
+        <div class="cin-veil"></div>
+        <div class="cin-chapter">
+            <p>Chapter 01</p>
+            <h2>How We Met</h2>
+            <p data-text="chapters.0.body"></p>
+        </div>
+    </section>
+    <section class="cin-scene" id="c2">
+        <img class="cin-bg" src="/assets/images/event-sangeet.jpg" alt="">
+        <div class="cin-veil"></div>
+        <div class="cin-chapter cin-right">
+            <p>Chapter 02</p>
+            <h2>The Journey</h2>
+            <p data-text="chapters.1.body"></p>
+        </div>
+    </section>
+    <section class="cin-scene" id="c3">
+        <img class="cin-bg" src="/assets/images/event-mehendi.jpg" alt="">
+        <div class="cin-veil"></div>
+        <div class="cin-chapter">
+            <p>Chapter 03</p>
+            <h2>The Celebration</h2>
+            <div class="cin-stills" data-repeat="events">
+                <article>
+                    <strong>{{item.name}}</strong>
+                    <span>{{item.time}} · {{item.venue}}</span>
+                </article>
+            </div>
+        </div>
+    </section>
+    <section class="cin-scene" id="c4">
+        <img class="cin-bg" src="/assets/images/event-reception.jpg" alt="">
+        <div class="cin-veil"></div>
+        <div class="cin-chapter cin-right">
+            <p>Chapter 04</p>
+            <h2>The Day</h2>
+            <p data-text="chapters.3.body"></p>
+            <div class="cin-stills cin-stills-row" data-repeat="gallery">
+                <img src="{{item.src}}" alt="{{item.caption}}">
+            </div>
+        </div>
+    </section>
+
+    <section class="cin-end" id="rsvp">
+        <p>End titles</p>
+        <h2>Will you be there?</h2>
+        <form class="jod-rsvp cin-form">
+            <input name="name" placeholder="Your name" required>
+            <select name="yes" required>
+                <option value="">Attendance</option>
+                <option>Present</option>
+                <option>Absent</option>
+            </select>
+            <button type="submit">Take your seat</button>
+        </form>
+        <p class="jod-thanks" hidden>The reel continues with you in it.</p>
+        <p class="cin-fin">Fin.</p>
+    </section>
+    <script src="/js/wedding-data.js"></script>
+    <script src="/js/preview-toolbar.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>

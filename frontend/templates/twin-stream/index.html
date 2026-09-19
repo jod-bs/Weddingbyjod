@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="/images/logo/weddings_by_jod_icon.webp">
+    <title>Twin Stream</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Karla:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="tw" data-template-name="Twin Stream" data-template-slug="twin-stream">
+    <header class="tw-bar">
+        <strong data-text="couple.full"></strong>
+        <nav>
+            <a href="#story">Our story</a>
+            <a href="#events">Events</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#rsvp">RSVP</a>
+        </nav>
+        <a class="tw-top" href="#rsvp">RSVP</a>
+    </header>
+    <section class="tw-hero">
+        <div class="tw-copy">
+            <svg class="tw-fish" viewBox="0 0 220 70" aria-hidden="true">
+                <path d="M8 35 C28 12 70 12 92 35 C70 58 28 58 8 35 Z" fill="none" stroke="#c45c3a" stroke-width="1.6"/>
+                <circle cx="78" cy="32" r="2" fill="#c45c3a"/>
+                <path d="M212 35 C192 12 150 12 128 35 C150 58 192 58 212 35 Z" fill="none" stroke="#2f6f8a" stroke-width="1.6"/>
+                <circle cx="142" cy="32" r="2" fill="#2f6f8a"/>
+                <path d="M104 28 C110 35 110 35 104 42" fill="none" stroke="#c9a227" stroke-width="1.4"/>
+            </svg>
+            <p class="tw-kicker">Painted with blessings, line by line</p>
+            <h1><span data-text="couple.partner1"></span> &amp; <span data-text="couple.partner2"></span></h1>
+            <p class="tw-script">two fish, one stream</p>
+            <p class="tw-meta"><span data-text="date"></span> · <span data-text="venueName"></span></p>
+            <div class="tw-cta">
+                <a class="tw-btn" href="#rsvp">Aau! RSVP</a>
+                <a class="tw-btn tw-ghost" href="#events">The celebrations</a>
+            </div>
+        </div>
+        <figure>
+            <img data-src="heroImage" alt="">
+        </figure>
+    </section>
+    <section id="story" class="tw-story">
+        <h2>One current</h2>
+        <p data-text="story"></p>
+    </section>
+    <section id="events" class="tw-events" data-repeat="events">
+        <article>
+            <h3>{{item.name}}</h3>
+            <p>{{item.date}} · {{item.time}}</p>
+            <p>{{item.venue}}</p>
+        </article>
+    </section>
+    <section id="gallery" class="tw-gal" data-repeat="gallery">
+        <img src="{{item.src}}" alt="{{item.caption}}">
+    </section>
+    <section id="rsvp" class="tw-rsvp">
+        <h2>Aau — join us</h2>
+        <form class="jod-rsvp">
+            <input name="name" required placeholder="Name">
+            <button type="submit">Send</button>
+        </form>
+        <p class="jod-thanks" hidden>Your blessing is received.</p>
+    </section>
+    <script src="/js/wedding-data.js"></script>
+    <script src="/js/preview-toolbar.js"></script>
+</body>
+</html>

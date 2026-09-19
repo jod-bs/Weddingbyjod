@@ -1,0 +1,339 @@
+/* ============================================================
+   JOD WEDDINGS — RESPONSIVE DESIGN
+   Mobile-first, dedicated layouts per breakpoint
+   ============================================================ */
+
+/* ─── BREAKPOINTS ─────────────────────────────────────────── */
+/* xs:  360px  */
+/* sm:  480px  */
+/* md:  768px  */
+/* lg:  1024px */
+/* xl:  1280px */
+/* 2xl: 1440px */
+
+/* ─── MOBILE NAVIGATION (≤ 1024px) ────────────────────────── */
+@media (max-width: 1024px) {
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+
+    .nav .btn-primary {
+        display: none;
+    }
+
+    .nav-inner {
+        gap: var(--space-4);
+    }
+}
+
+/* ─── STORY TIMELINE (≤ 768px) ─────────────────────────────── */
+@media (max-width: 768px) {
+    /* Collapse story to single column */
+    .story-item {
+        grid-template-columns: 40px 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .story-item:nth-child(even) .story-content { order: unset; }
+    .story-item:nth-child(even) .story-image-wrap { order: unset; text-align: left; }
+
+    .story-spine { order: 1; }
+    .story-content { order: 2; }
+    .story-image-wrap { display: none; } /* Hidden on mobile */
+
+    .story-item:nth-child(even) .story-content,
+    .story-item:nth-child(odd) .story-content {
+        padding: var(--space-4) var(--space-4) var(--space-8) var(--space-6);
+        text-align: left;
+    }
+
+    .story-item:nth-child(even) .story-text {
+        margin-left: 0;
+    }
+
+    /* Venue */
+    .venue-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-10);
+    }
+
+    /* Events */
+    .event-card-interactive {
+        grid-template-columns: 1fr;
+    }
+
+    .event-card-img {
+        height: 200px;
+        aspect-ratio: auto;
+    }
+
+    /* Event modal details */
+    .event-modal-details {
+        grid-template-columns: 1fr;
+    }
+
+    /* Gallery */
+    .gallery-masonry {
+        columns: 2;
+    }
+
+    /* Guestbook */
+    .guestbook-wall {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ─── TABLET (768px – 1024px) ─────────────────────────────── */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .venue-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-10);
+    }
+
+    .story-image {
+        max-width: 220px;
+    }
+}
+
+/* ─── MOBILE (≤ 640px) ─────────────────────────────────────── */
+@media (max-width: 640px) {
+    /* Container */
+    .container { padding-inline: var(--space-5); }
+
+    /* Hero */
+    .hero { height: 100svh; min-height: 700px; }
+
+    .hero-image img { object-position: 60% center; }
+
+    .hero-name-1,
+    .hero-name-2 {
+        font-size: clamp(2rem, 11vw, 4rem);
+        white-space: nowrap;
+    }
+
+    .hero-ampersand {
+        font-size: clamp(1.8rem, 8vw, 3rem);
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-3);
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    /* Countdown */
+    .countdown-grid {
+        gap: var(--space-4);
+    }
+
+    .countdown-number {
+        font-size: clamp(2.5rem, 12vw, 4rem);
+    }
+
+    .countdown-separator { display: none; }
+
+    /* Story */
+    .story-item {
+        grid-template-columns: 32px 1fr;
+    }
+
+    .story-dot { width: 10px; height: 10px; }
+
+    /* Events */
+    .events-journey {
+        gap: 0;
+    }
+
+    .event-card-interactive {
+        grid-template-columns: 1fr;
+    }
+
+    .event-card-img { height: 180px; }
+
+    .event-card-info {
+        padding: var(--space-5) var(--space-5);
+    }
+
+    /* RSVP */
+    .rsvp-card {
+        border-radius: var(--radius-lg);
+    }
+
+    /* Gallery */
+    .gallery-masonry { columns: 1; }
+
+    /* Concierge panel */
+    .concierge-panel {
+        right: var(--space-4);
+        left: var(--space-4);
+        width: auto;
+        bottom: calc(56px + var(--space-4) + var(--space-3));
+        max-height: 60svh;
+    }
+
+    .concierge-fab {
+        right: var(--space-4);
+        bottom: var(--space-4);
+    }
+
+    /* Toast */
+    .toast {
+        left: var(--space-4);
+        right: var(--space-4);
+        bottom: var(--space-4);
+        max-width: none;
+    }
+
+    /* City Guide */
+    .cityguide-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Wedding Day */
+    .weddingday-event {
+        padding: var(--space-4) var(--space-4);
+    }
+
+    /* Modal */
+    .modal-overlay {
+        align-items: flex-end;
+        padding: 0;
+    }
+
+    .modal {
+        border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+        max-height: 90svh;
+    }
+
+    .event-modal-image { height: 200px; }
+
+    /* Footer */
+    .footer-social { gap: var(--space-3); }
+
+    /* Invite page */
+    .invite-card {
+        border-radius: var(--radius-lg);
+    }
+}
+
+/* ─── EXTRA SMALL (≤ 380px) ────────────────────────────────── */
+@media (max-width: 380px) {
+    .hero-name-1,
+    .hero-name-2 { font-size: clamp(1.4rem, 7vw, 2rem); white-space: normal; }
+
+    .hero-ampersand { font-size: 1.8rem; }
+
+    .countdown-unit { min-width: 60px; }
+
+    .countdown-number { font-size: 2.5rem; }
+
+    .nav-logo { font-size: 1.4rem; }
+}
+
+/* ─── DESKTOP LARGE (≥ 1440px) ─────────────────────────────── */
+@media (min-width: 1440px) {
+    .gallery-masonry { columns: 4; }
+
+    .cityguide-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ─── PRINT ───────────────────────────────────────────────── */
+@media print {
+    .nav,
+    .concierge-fab,
+    .hero-scroll,
+    .gallery-upload-bar,
+    .rsvp-section { display: none; }
+
+    .hero { height: auto; page-break-after: always; }
+}
+
+/* ─── HIGH-DPI / RETINA ───────────────────────────────────── */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-image img { image-rendering: -webkit-optimize-contrast; }
+}
+
+/* ─── TOUCH DEVICE ─────────────────────────────────────────── */
+@media (hover: none) and (pointer: coarse) {
+    /* Ensure comfortable tap targets */
+    .btn { min-height: 48px; }
+    .nav-link { padding-block: var(--space-3); }
+    .tab-btn { padding: var(--space-4) var(--space-6); }
+    .accordion-trigger { padding: var(--space-5) 0; }
+
+    /* Remove hover transforms on touch */
+    .card:hover { transform: none; }
+    .cityguide-card:hover { transform: none; }
+    .event-card-interactive:hover { transform: none; }
+}
+
+/* ─── DARK MODE SPECIFIC FIXES ─────────────────────────────── */
+[data-theme="dark"] .venue-map-preview {
+    background: #1C1A16;
+}
+
+[data-theme="dark"] .story-dot {
+    background: #0E0D0C;
+}
+
+/* ─── NAVIGATION MOBILE MENU OVERLAY ──────────────────────── */
+@media (max-width: 1024px) {
+    .mobile-nav-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-4);
+        margin-top: var(--space-4);
+    }
+
+    .mobile-theme-toggle {
+        width: 48px;
+        height: 48px;
+        border-radius: var(--radius-full);
+        border: 1px solid var(--border);
+        background: var(--bg-card);
+        color: var(--text-primary);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        transition: all var(--transition-base);
+    }
+
+    .mobile-theme-toggle:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+    }
+}
+
+/* ─── STORY IMAGE ON TABLET+ ───────────────────────────────── */
+@media (min-width: 769px) {
+    .story-image-wrap { display: flex; }
+}
+
+/* ─── SMOOTH PAGE TRANSITIONS ──────────────────────────────── */
+.page-transition-enter {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.page-transition-active {
+    transition: opacity var(--transition-base), transform var(--transition-base);
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ─── SECTION DIVIDERS ─────────────────────────────────────── */
+.section-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border), transparent);
+    max-width: var(--container-lg);
+    margin: 0 auto;
+}

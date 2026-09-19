@@ -1,0 +1,34 @@
+.ar{margin:0;background:#fafafa;color:#111;font-family:'IBM Plex Sans',sans-serif;font-weight:300}
+.ar a{color:inherit;text-decoration:none}
+.ar-top{display:flex;justify-content:space-between;padding:1.2rem 3vw;border-bottom:1px solid #111;position:sticky;top:0;background:#fafafa;z-index:4;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase}
+.ar-top nav{display:flex;gap:1.2rem}
+.ar-hero{padding:14vh 3vw 6vh;display:flex;justify-content:space-between;align-items:flex-end}
+.ar-hero h1{font-family:'IBM Plex Serif',serif;font-weight:300;font-size:clamp(2rem,6vw,5rem);display:flex;flex-direction:column;line-height:.95;margin:0}
+.ar-hero p{letter-spacing:.28em}
+.ar-photo{margin:0 3vw;border:1px solid #111}
+.ar-photo img{width:100%;height:62vh;object-fit:cover;display:block}
+.ar-block{padding:10vh 3vw;border-top:1px solid #111}
+.ar-block>p{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}
+.ar-grid2{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:1.4rem}
+.ar-grid2 h2{font-family:'IBM Plex Serif',serif;font-weight:300;font-size:2.4rem;margin:0}
+.ar-grid2 p{max-width:48ch;line-height:1.75}
+.ar table{width:100%;border-collapse:collapse;margin-top:1.4rem}
+.ar td{border-top:1px solid #111;padding:1rem 1rem 1rem 0;font-size:.95rem}
+.ar-index{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:#111;margin-top:1.4rem}
+.ar-index img{width:100%;height:160px;object-fit:cover;display:block;background:#fafafa}
+.ar-end form{display:flex;gap:.6rem;margin-top:1.4rem;max-width:420px}
+.ar-end input,.ar-end button{border:1px solid #111;background:transparent;padding:.7rem;font:inherit;flex:1}
+.ar-end button{flex:0;background:#111;color:#fafafa;padding:.7rem 1.2rem}
+@media (max-width:800px){
+    .ar-hero,.ar-grid2{display:block}
+    .ar-hero{padding:8vh 5vw 4vh}
+    .ar-hero h1{margin-bottom:1rem}
+    .ar-index{grid-template-columns:1fr 1fr}
+    .ar-photo img{height:42vh}
+    .ar td{display:block;border-top:0;padding:.2rem 0}
+    .ar tr{border-top:1px solid #111;display:block;padding:.8rem 0}
+    .ar-end form{flex-direction:column}
+}
+@media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+}

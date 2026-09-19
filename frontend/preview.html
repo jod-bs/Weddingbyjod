@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="/images/logo/weddings_by_jod_icon.webp">
+    <title>Template preview — Weddings by JOD</title>
+    <link rel="stylesheet" href="css/preview-shell.css">
+</head>
+<body>
+    <div class="ps-bar">
+        <a href="templates.html">← Back to templates</a>
+        <div>
+            <button type="button" data-w="desktop" class="is-on">Desktop</button>
+            <button type="button" data-w="tablet">Tablet</button>
+            <button type="button" data-w="mobile">Mobile</button>
+        </div>
+        <a class="ps-use" id="ps-use" href="index.html#consultation">Use this template</a>
+    </div>
+    <div class="ps-stage" id="ps-stage">
+        <iframe id="ps-frame" title="Template preview"></iframe>
+    </div>
+    <script>
+        const map = {
+            editorial: ['/templates/editorial/index.html', 'Editorial'],
+            cinematic: ['/templates/cinematic/index.html', 'Cinematic'],
+            'split-screen': ['/templates/split-screen/index.html', 'Split Screen'],
+            scrapbook: ['/templates/scrapbook/index.html', 'Scrapbook'],
+            'black-tie': ['/templates/black-tie/index.html', 'Black Tie'],
+            heritage: ['/templates/heritage/index.html', 'Indian Heritage'],
+            architectural: ['/templates/architectural/index.html', 'Architectural'],
+            botanical: ['/templates/botanical/index.html', 'Botanical'],
+            destination: ['/templates/destination/index.html', 'Destination'],
+            typography: ['/templates/typography/index.html', 'Typographic'],
+            celestial: ['/templates/celestial/index.html', 'Celestial'],
+            festival: ['/templates/festival/index.html', 'Festival'],
+            vermillion: ['/templates/vermillion/index.html', 'Vermillion'],
+            azure: ['/templates/azure/index.html', 'Azure'],
+            jade: ['/templates/jade/index.html', 'Jade'],
+            marigold: ['/templates/marigold/index.html', 'Marigold'],
+            orchid: ['/templates/orchid/index.html', 'Orchid'],
+            tide: ['/templates/tide/index.html', 'Tide'],
+            ridge: ['/templates/ridge/index.html', 'Ridge'],
+            'twin-stream': ['/templates/twin-stream/index.html', 'Twin Stream'],
+            neon: ['/templates/neon/index.html', 'Neon Night'],
+            palms: ['/templates/palms/index.html', 'Palms']
+        };
+        const t = new URLSearchParams(location.search).get('t') || 'editorial';
+        const pair = map[t] || map.editorial;
+        document.getElementById('ps-frame').src = pair[0];
+        document.getElementById('ps-use').href = 'index.html?template=' + encodeURIComponent(pair[1]) + '#consultation';
+        document.title = pair[1] + ' preview — JOD';
+        const stage = document.getElementById('ps-stage');
+        document.querySelectorAll('[data-w]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('[data-w]').forEach(b => b.classList.remove('is-on'));
+                btn.classList.add('is-on');
+                stage.className = 'ps-stage is-' + btn.dataset.w;
+            });
+        });
+    </script>
+</body>
+</html>

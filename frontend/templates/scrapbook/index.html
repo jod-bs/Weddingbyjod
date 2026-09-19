@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="/images/logo/weddings_by_jod_icon.webp">
+    <title>Memory Album — Scrapbook</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="sc" data-template-name="Scrapbook" data-template-slug="scrapbook">
+    <header class="sc-cover">
+        <p class="sc-hand">our album</p>
+        <h1><span data-text="couple.partner1"></span> <em>+</em> <span data-text="couple.partner2"></span></h1>
+        <p class="sc-stamp" data-text="date"></p>
+    </header>
+    <nav class="sc-tabs">
+        <a href="#memories">Memories</a>
+        <a href="#days">The days</a>
+        <a href="#box">Photo box</a>
+        <a href="#note">A note</a>
+    </nav>
+    <section id="memories" class="sc-table">
+        <article class="sc-polaroid r-l">
+            <span class="tape"></span>
+            <img data-src="storyImage" alt="">
+            <p class="sc-hand">our first trip</p>
+        </article>
+        <aside class="sc-note r-r">
+            <p data-text="storyShort"></p>
+            <small>— tucked in the back of the book</small>
+        </aside>
+        <article class="sc-polaroid r-r">
+            <span class="tape t2"></span>
+            <img data-src="heroImage" alt="">
+            <p class="sc-hand">yes.</p>
+        </article>
+        <div class="sc-chapters" data-repeat="chapters">
+            <article class="sc-chapter">
+                <h3>{{item.n}} · {{item.title}}</h3>
+                <p>{{item.body}}</p>
+            </article>
+        </div>
+    </section>
+    <section id="days" class="sc-pins">
+        <h2 class="sc-hand">pinned to the fridge</h2>
+        <div class="sc-pin-row" data-repeat="events">
+            <article class="sc-pin r-{{index}}">
+                <span class="pin"></span>
+                <strong>{{item.name}}</strong>
+                <p>{{item.date}}</p>
+                <p>{{item.time}} · {{item.venue}}</p>
+            </article>
+        </div>
+    </section>
+    <section id="box" class="sc-box">
+        <h2 class="sc-hand">the photo box</h2>
+        <div class="sc-scatter" data-repeat="gallery">
+            <figure class="sc-polaroid">
+                <img src="{{item.src}}" alt="{{item.caption}}">
+                <figcaption class="sc-hand">{{item.caption}}</figcaption>
+            </figure>
+        </div>
+    </section>
+    <section id="note" class="sc-rsvp">
+        <div class="sc-paper">
+            <h2 class="sc-hand">save us a page</h2>
+            <form class="jod-rsvp">
+                <input name="name" placeholder="your name" required>
+                <textarea name="msg" placeholder="a little note"></textarea>
+                <button type="submit">tuck this in</button>
+            </form>
+            <p class="jod-thanks" hidden>Pressed between the pages.</p>
+        </div>
+    </section>
+    <script src="/js/wedding-data.js"></script>
+    <script src="/js/preview-toolbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+.sp{margin:0;display:grid;grid-template-columns:42% 58%;min-height:100vh;font-family:Outfit,sans-serif;background:#efeee9;color:#111}
+.sp a{color:inherit;text-decoration:none}
+.sp-left{position:sticky;top:0;height:100vh;overflow:hidden;color:#fff}
+.sp-left img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.9)}
+.sp-left::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.72))}
+.sp-left-copy{position:absolute;inset:auto 8% 8%;z-index:1}
+.sp-left h1{font-weight:300;font-size:clamp(2.4rem,5vw,4rem);line-height:.95;margin:0}
+.sp-left h1 i{display:block;font-style:normal;font-size:.5em;opacity:.7;margin:.2rem 0}
+.sp-count{margin-top:1.2rem;display:flex;align-items:baseline;gap:.4rem}
+.sp-count b{font-size:2.4rem;font-weight:500}
+.sp-right{padding:0 7% 8vh}
+.sp-nav{position:sticky;top:0;background:#efeee9;display:flex;gap:1.4rem;padding:1.4rem 0;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;z-index:2}
+.sp-right section{min-height:70vh;padding:8vh 0;border-top:1px solid #111}
+.sp-label{font-size:.75rem;letter-spacing:.2em}
+.sp-right h2{font-weight:300;font-size:2.8rem;margin:.2rem 0 1rem}
+.sp-right p{max-width:42ch;line-height:1.7;font-weight:300}
+.sp-right ol{list-style:none;padding:0;margin:0}
+.sp-right li{display:grid;gap:.2rem;padding:1rem 0;border-bottom:1px solid #d8d4cc}
+.sp-muted{opacity:.55;font-size:.85rem}
+.sp-thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem;margin-top:1.4rem}
+.sp-thumbs img{width:100%;height:110px;object-fit:cover}
+.sp-form{display:flex;flex-direction:column;gap:.7rem;max-width:320px}
+.sp-form input,.sp-form button{border:1px solid #111;background:transparent;padding:.75rem;font:inherit}
+.sp-form button{background:#111;color:#efeee9}
+@media (max-width:860px){
+    .sp{grid-template-columns:1fr}
+    .sp-left{position:sticky;top:0;height:38vh;z-index:4}
+    .sp-left h1{font-size:1.8rem}
+    .sp-count b{font-size:1.4rem}
+    .sp-right{padding:0 6% 8vh}
+    .sp-right section{min-height:auto;padding:3.5rem 0}
+    .sp-nav{top:0}
+}
+@media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+}

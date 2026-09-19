@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="/images/logo/weddings_by_jod_icon.webp">
+    <title>Typographic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="ty" data-template-name="Typographic" data-template-slug="typography">
+    <nav class="ty-nav">
+        <a href="#story">Story</a>
+        <a href="#events">When</a>
+        <a href="#rsvp">RSVP</a>
+    </nav>
+    <p class="ty-vert" data-text="dateShort"></p>
+    <header class="ty-hero">
+        <h1 class="ty-a" data-text="couple.partner1"></h1>
+        <p class="ty-and">&amp;</p>
+        <h1 class="ty-b" data-text="couple.partner2"></h1>
+        <img data-src="heroImage" alt="">
+    </header>
+    <section id="story" class="ty-story">
+        <h2>the long sentence of us</h2>
+        <p data-text="story"></p>
+    </section>
+    <section id="events" class="ty-when" data-repeat="events">
+        <article>
+            <small>{{n}}</small>
+            <h3>{{item.name}}</h3>
+            <p>{{item.time}}</p>
+        </article>
+    </section>
+    <section class="ty-words" data-repeat="gallery">
+        <figure>
+            <img src="{{item.src}}" alt="">
+            <span>{{item.caption}}</span>
+        </figure>
+    </section>
+    <section id="rsvp" class="ty-rsvp">
+        <h2>say yes</h2>
+        <form class="jod-rsvp">
+            <input name="name" required>
+            <button type="submit">send</button>
+        </form>
+        <p class="jod-thanks" hidden>yes.</p>
+    </section>
+    <script src="/js/wedding-data.js"></script>
+    <script src="/js/preview-toolbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="/images/logo/weddings_by_jod_icon.webp">
+    <title>Destination Postcard</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="ds" data-template-name="Destination" data-template-slug="destination">
+    <header class="ds-hero">
+        <p class="ds-post">POSTCARD FROM <span data-text="destination"></span></p>
+        <h1><span data-text="couple.partner1"></span><br>&amp;<br><span data-text="couple.partner2"></span></h1>
+        <p class="ds-coord" data-text="coordinates"></p>
+        <p class="ds-when" data-text="date"></p>
+        <span class="ds-stamp">AIR MAIL</span>
+        <nav>
+            <a href="#route">Route</a>
+            <a href="#tickets">Tickets</a>
+            <a href="#guide">Guide</a>
+            <a href="#rsvp">Check in</a>
+        </nav>
+    </header>
+    <section id="route" class="ds-route">
+        <h2>The itinerary of us</h2>
+        <ol data-repeat="journey">
+            <li>
+                <strong>{{item.place}}</strong>
+                <span>{{item.note}}</span>
+            </li>
+        </ol>
+        <p class="ds-story" data-text="storyShort"></p>
+    </section>
+    <section id="tickets" class="ds-tickets" data-repeat="events">
+        <article class="ds-ticket">
+            <div>
+                <small>BOARDING PASS</small>
+                <h3>{{item.name}}</h3>
+                <p>{{item.venue}}</p>
+            </div>
+            <div class="ds-stub">
+                <p>{{item.code}}</p>
+                <p>{{item.time}}</p>
+                <p>{{item.date}}</p>
+            </div>
+        </article>
+    </section>
+    <section id="guide" class="ds-guide">
+        <h2>Destination notes</h2>
+        <p data-text="venueName"></p>
+        <p data-text="dressCode"></p>
+        <div class="ds-strip" data-repeat="gallery">
+            <img src="{{item.src}}" alt="{{item.caption}}">
+        </div>
+    </section>
+    <section id="rsvp" class="ds-check">
+        <h2>Check in</h2>
+        <form class="jod-rsvp">
+            <input name="name" required placeholder="Passenger name">
+            <button type="submit">Stamp RSVP</button>
+        </form>
+        <p class="jod-thanks" hidden>You’re on the manifest.</p>
+    </section>
+    <script src="/js/wedding-data.js"></script>
+    <script src="/js/preview-toolbar.js"></script>
+</body>
+</html>

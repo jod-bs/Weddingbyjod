@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="/images/logo/weddings_by_jod_icon.webp">
+    <title>Black Tie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bt" data-template-name="Black Tie" data-template-slug="black-tie">
+    <header class="bt-hero">
+        <nav class="bt-nav">
+            <a href="#programme">Programme</a>
+            <a href="#gallery">Gallery</a>
+            <button type="button" id="bt-open">RSVP</button>
+        </nav>
+        <h1><span data-text="couple.partner1"></span> <i>&amp;</i> <span data-text="couple.partner2"></span></h1>
+        <p class="bt-line"></p>
+        <p class="bt-sub">A night to remember</p>
+        <p class="bt-when" data-text="dateShort"></p>
+    </header>
+    <figure class="bt-bleed">
+        <img data-src="heroImage" alt="">
+    </figure>
+    <section class="bt-story">
+        <p class="bt-k">The evening</p>
+        <h2>An invitation in stillness</h2>
+        <p data-text="story"></p>
+    </section>
+    <section id="programme" class="bt-prog">
+        <h2>Programme</h2>
+        <ul data-repeat="events">
+            <li>
+                <span>{{item.time}}</span>
+                <strong>{{item.name}}</strong>
+                <em>{{item.venue}}</em>
+            </li>
+        </ul>
+        <p class="bt-dress" data-text="dressCode"></p>
+    </section>
+    <section id="gallery" class="bt-gal" data-repeat="gallery">
+        <img src="{{item.src}}" alt="{{item.caption}}">
+    </section>
+    <footer class="bt-foot">
+        <span data-text="couple.full"></span>
+        <span data-text="hashtag"></span>
+    </footer>
+    <div class="bt-modal" id="bt-modal" hidden>
+        <div class="bt-modal-card">
+            <button type="button" id="bt-close">Close</button>
+            <h3>Request your place</h3>
+            <form class="jod-rsvp">
+                <input name="name" placeholder="Name" required>
+                <input name="guests" placeholder="Guests">
+                <button type="submit">Confirm</button>
+            </form>
+            <p class="jod-thanks" hidden>We look forward to the evening.</p>
+        </div>
+    </div>
+    <script src="/js/wedding-data.js"></script>
+    <script src="/js/preview-toolbar.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>

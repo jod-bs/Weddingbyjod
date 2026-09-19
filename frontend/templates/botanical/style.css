@@ -1,0 +1,34 @@
+.bo{margin:0;background:#f3f6ee;color:#2c3a28;font-family:Libre Baskerville,serif;position:relative}
+.bo a{color:inherit;text-decoration:none}
+.bo-leaf{position:fixed;left:-40px;top:10vh;height:80vh;color:#6f8a5c;pointer-events:none;opacity:.7}
+.bo-hero{padding:4vh 8vw 8vh;display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
+.bo-hero nav{grid-column:1/-1;display:flex;gap:1.4rem;font-family:Manrope,sans-serif;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase}
+.bo-hero h1{font-weight:400;font-size:clamp(2.2rem,5vw,4rem);font-style:italic}
+.bo-blob{margin:0;border-radius:60% 40% 55% 45%/50% 55% 45% 50%;overflow:hidden;height:460px}
+.bo-blob img{width:100%;height:100%;object-fit:cover}
+.bo-path{padding:4vh 12vw 8vh;display:flex;flex-direction:column;gap:4rem}
+.bo-stop{max-width:540px}
+.bo-stop.s1{align-self:flex-start}
+.bo-stop.s2{align-self:flex-end;display:grid;gap:1.4rem}
+.bo-mark{padding:4vh 8vw}
+.bo-markers{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.bo-markers article{text-align:center}
+.bo-markers i{display:block;width:18px;height:18px;border-radius:50%;background:#6f8a5c;margin:0 auto 1rem}
+.bo-grove{column-count:3;column-gap:.7rem;padding:2rem 8vw 5rem}
+.bo-grove img{width:100%;margin:0 0 .7rem;border-radius:40% 60% 50% 50%/30% 40% 60% 50%;break-inside:avoid}
+.bo-grove img:nth-child(2n){border-radius:50% 30% 60% 40%/40% 60% 30% 70%}
+.bo-end{text-align:center;padding:4rem 1rem 7rem}
+.bo-end form{display:flex;justify-content:center;gap:.5rem;margin-top:1rem}
+.bo-end input,.bo-end button{border:1px solid #2c3a28;background:transparent;padding:.7rem 1rem;font:inherit;border-radius:999px}
+.bo-end button{background:#2c3a28;color:#f3f6ee}
+@media (max-width:800px){
+    .bo-hero,.bo-markers{grid-template-columns:1fr}
+    .bo-grove{column-count:2}
+    .bo-stop.s2{align-self:stretch}
+    .bo-leaf{display:none}
+    .bo-blob{height:320px}
+    .bo-end form{flex-direction:column;align-items:center}
+}
+@media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+}
