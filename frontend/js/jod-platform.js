@@ -403,7 +403,7 @@ function initInquiryForm() {
         } finally {
             if (submitBtn) {
                 submitBtn.disabled = false;
-                submitBtn.textContent = 'Request Bespoke Consultation';
+                submitBtn.textContent = 'Submit';
             }
         }
     });
