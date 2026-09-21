@@ -12,7 +12,7 @@
         <a class="jpb-back" href="/templates.html">← Templates</a>
         <span class="jpb-name">${name}</span>
         <div class="jpb-actions">
-            <a class="jpb-use" href="/index.html?template=${encodeURIComponent(name)}#consultation">Use this template</a>
+            <a class="jpb-use" href="/?template=${encodeURIComponent(name)}#consultation">Use this template</a>
         </div>
     `;
     const style = document.createElement('style');

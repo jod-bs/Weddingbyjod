@@ -120,13 +120,15 @@ function initTestimonialsCarousel() {
 
     if (!track) return;
 
-    const slides = track.querySelectorAll('.testimonial-slide');
+    const slides = [...track.querySelectorAll('.testimonial-slide')];
+    if (!slides.length) return;
     let current = 0;
     let autoTimer = null;
 
     function goTo(index) {
         current = (index + slides.length) % slides.length;
-        track.style.transform = `translateX(-${current * 100}%)`;
+        const slideWidth = slides[0].getBoundingClientRect().width || track.parentElement?.clientWidth || 0;
+        track.style.transform = `translateX(-${current * slideWidth}px)`;
         dots.forEach((d, i) => {
             d.classList.toggle('active', i === current);
             d.setAttribute('aria-selected', String(i === current));
@@ -137,20 +139,22 @@ function initTestimonialsCarousel() {
     }
 
     function startAuto() {
+        stopAuto();
         autoTimer = setInterval(() => goTo(current + 1), 5500);
     }
-    function stopAuto() { clearInterval(autoTimer); }
+    function stopAuto() { clearInterval(autoTimer); autoTimer = null; }
     function resetAuto() { stopAuto(); startAuto(); }
 
     btnNext?.addEventListener('click', () => { goTo(current + 1); resetAuto(); });
     btnPrev?.addEventListener('click', () => { goTo(current - 1); resetAuto(); });
     dots.forEach((d, i) => d.addEventListener('click', () => { goTo(i); resetAuto(); }));
 
-    // Keyboard navigation
     document.getElementById('testimonials-carousel')?.addEventListener('keydown', e => {
         if (e.key === 'ArrowRight') { goTo(current + 1); resetAuto(); }
         if (e.key === 'ArrowLeft')  { goTo(current - 1); resetAuto(); }
     });
+
+    window.addEventListener('resize', () => goTo(current));
 
     goTo(0);
     startAuto();
@@ -181,7 +185,10 @@ function initPhilosophyCarousel() {
             track.style.transform = '';
             return;
         }
-        track.style.transform = `translateX(-${current * 100}%)`;
+        const slideWidth = slides[0].getBoundingClientRect().width
+            || track.parentElement?.clientWidth
+            || 0;
+        track.style.transform = `translateX(-${current * slideWidth}px)`;
         dots.forEach((dot, i) => {
             dot.classList.toggle('active', i === current);
             dot.setAttribute('aria-selected', String(i === current));
@@ -224,6 +231,9 @@ function initPhilosophyCarousel() {
         goTo(isMobile() ? current : 0);
         resetAuto();
     });
+    window.addEventListener('resize', () => {
+        if (isMobile()) goTo(current);
+    });
 
     goTo(0);
     startAuto();
@@ -240,6 +250,13 @@ function initSectionCarousels() {
         if (!track) return;
         const slides = [...track.querySelectorAll(':scope > .section-carousel-slide')];
         if (slides.length < 2) return;
+
+        if (!track.parentElement?.classList.contains('section-carousel-viewport')) {
+            const viewport = document.createElement('div');
+            viewport.className = 'section-carousel-viewport';
+            track.parentNode.insertBefore(viewport, track);
+            viewport.appendChild(track);
+        }
 
         let controls = root.querySelector('.section-carousel-controls');
         if (!controls) {
@@ -264,25 +281,28 @@ function initSectionCarousels() {
         let current = 0;
         let autoTimer = null;
         let startX = 0;
+        const alwaysOn = root.hasAttribute('data-carousel-always');
 
-        function isMobile() {
-            return mq.matches;
+        function isActive() {
+            return mq.matches || alwaysOn;
         }
 
         function goTo(index) {
             current = (index + slides.length) % slides.length;
-            if (!isMobile()) {
+            if (!isActive()) {
                 track.style.transform = '';
+                slides.forEach(slide => slide.removeAttribute('aria-hidden'));
                 return;
             }
-            track.style.transform = `translateX(-${current * 100}%)`;
+            const slideWidth = slides[0].getBoundingClientRect().width;
+            track.style.transform = `translateX(-${current * slideWidth}px)`;
             dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
             slides.forEach((slide, i) => slide.setAttribute('aria-hidden', String(i !== current)));
         }
 
         function startAuto() {
             stopAuto();
-            if (!isMobile() || reduceMotion) return;
+            if (!isActive() || reduceMotion || alwaysOn) return;
             autoTimer = setInterval(() => goTo(current + 1), 5000);
         }
         function stopAuto() {
@@ -303,15 +323,18 @@ function initSectionCarousels() {
             stopAuto();
         }, { passive: true });
         track.addEventListener('touchend', (e) => {
-            if (!isMobile()) return;
+            if (!isActive()) return;
             const dx = e.changedTouches[0].clientX - startX;
             if (Math.abs(dx) > 40) goTo(current + (dx < 0 ? 1 : -1));
             resetAuto();
         }, { passive: true });
 
         mq.addEventListener('change', () => {
-            goTo(isMobile() ? current : 0);
+            goTo(isActive() ? current : 0);
             resetAuto();
+        });
+        window.addEventListener('resize', () => {
+            if (isActive()) goTo(current);
         });
 
         goTo(0);
@@ -908,6 +931,110 @@ function initWeddingArchive() {
     });
 }
 
+// ─── YOUTUBE HERO ──────────────────────────────────────────
+function initYouTubeHero() {
+    const hero = document.querySelector('[data-yt-hero]');
+    if (!hero) return;
+
+    const slides = Array.from(hero.querySelectorAll('.hero-yt-slide'));
+    const soundBtn = hero.querySelector('[data-yt-sound]');
+    const soundLabel = soundBtn?.querySelector('.hero-yt-sound-label');
+    const prevBtn = hero.querySelector('[data-yt-prev]');
+    const nextBtn = hero.querySelector('[data-yt-next]');
+    if (!slides.length) return;
+
+    if (slides.length < 2) {
+        prevBtn?.setAttribute('hidden', '');
+        nextBtn?.setAttribute('hidden', '');
+    } else {
+        prevBtn?.removeAttribute('hidden');
+        nextBtn?.removeAttribute('hidden');
+    }
+
+    let index = 0;
+    let soundOn = true;
+    let soundApplied = false;
+
+    function setSoundUI() {
+        if (!soundBtn) return;
+        soundBtn.removeAttribute('hidden');
+        soundBtn.setAttribute('aria-pressed', soundOn ? 'true' : 'false');
+        soundBtn.setAttribute('aria-label', soundOn ? 'Turn sound off' : 'Turn sound on');
+        if (soundLabel) soundLabel.textContent = soundOn ? 'Sound on' : 'Turn sound on';
+    }
+
+    function embedUrl(id) {
+        const origin = encodeURIComponent(location.origin);
+        return `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&playsinline=1&rel=0&controls=0&loop=1&playlist=${id}&enablejsapi=1&origin=${origin}`;
+    }
+
+    function activeIframe() {
+        return slides[index]?.querySelector('iframe');
+    }
+
+    function command(func, args = []) {
+        const win = activeIframe()?.contentWindow;
+        if (!win) return;
+        win.postMessage(JSON.stringify({ event: 'command', func, args }), '*');
+    }
+
+    function listenToPlayer() {
+        activeIframe()?.contentWindow?.postMessage(JSON.stringify({ event: 'listening' }), '*');
+    }
+
+    function applyDefaultSound() {
+        if (!soundOn || soundApplied) return;
+        soundApplied = true;
+        command('unMute');
+        command('setVolume', [100]);
+    }
+
+    function showFilm(next) {
+        index = (next + slides.length) % slides.length;
+        soundApplied = false;
+        slides.forEach((slide, i) => {
+            const iframe = slide.querySelector('iframe');
+            const id = slide.getAttribute('data-yt');
+            const active = i === index;
+            slide.classList.toggle('is-active', active);
+            if (!iframe || !id) return;
+            iframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
+            if (active) iframe.src = embedUrl(id);
+            else iframe.removeAttribute('src');
+        });
+        setSoundUI();
+    }
+
+    slides.forEach(slide => {
+        slide.querySelector('iframe')?.addEventListener('load', listenToPlayer);
+    });
+    listenToPlayer();
+    [200, 600, 1200, 2000].forEach(ms => window.setTimeout(listenToPlayer, ms));
+
+    window.addEventListener('message', event => {
+        if (event.origin !== 'https://www.youtube.com' && event.origin !== 'https://www.youtube-nocookie.com') return;
+        let data = event.data;
+        if (typeof data === 'string') {
+            try { data = JSON.parse(data); } catch { return; }
+        }
+        const state = typeof data?.info === 'number' ? data.info : data?.info?.playerState;
+        if (state === 1) applyDefaultSound();
+    });
+
+    setSoundUI();
+
+    soundBtn?.addEventListener('click', () => {
+        soundOn = !soundOn;
+        soundApplied = soundOn;
+        setSoundUI();
+        command(soundOn ? 'unMute' : 'mute');
+        if (soundOn) command('setVolume', [100]);
+    });
+
+    prevBtn?.addEventListener('click', () => showFilm(index - 1));
+    nextBtn?.addEventListener('click', () => showFilm(index + 1));
+}
+
 // ─── INIT ───────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
     if (!document.getElementById('platform-nav')) return;
@@ -923,6 +1050,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initInquiryForm();
     initSmoothScroll();
     initHeroVideos();
+    initYouTubeHero();
     initCinematicFilm();
     initWeddingArchive();
 });

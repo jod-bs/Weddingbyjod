@@ -48,6 +48,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.middleware("http")
+async def youtube_embed_headers(request: Request, call_next):
+    response = await call_next(request)
+    response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+    return response
+
 # Include API Routers
 app.include_router(weddings.router)
 app.include_router(guests.router)
@@ -84,7 +90,12 @@ class SiteStaticFiles(StaticFiles):
         request_path = scope.get("path", "")
         if request_path.startswith("/api"):
             raise StarletteHTTPException(status_code=404, detail="Not found")
-        return await super().get_response(path, scope)
+        response = await super().get_response(path, scope)
+        if request_path.endswith(".html") or request_path in ("", "/"):
+            response.headers["Cache-Control"] = "no-store"
+        elif request_path in ("/favicon.ico", "/favicon.png"):
+            response.headers["Cache-Control"] = "public, max-age=0, must-revalidate"
+        return response
 
 # Mount static frontend directories
 if settings.UPLOAD_DIR.exists():

@@ -372,7 +372,7 @@ function initPreviewModal() {
             `<span class="tpl-modal-swatch"><i style="background:${hex}"></i>${label}</span>`
         ).join('');
         chipsEl.innerHTML = chips.map(t => `<span>${t}</span>`).join('');
-        useEl.href = `index.html?template=${encodeURIComponent(name)}#consultation`;
+        useEl.href = `/?template=${encodeURIComponent(name)}#consultation`;
         fullEl.href = `preview.html?t=${encodeURIComponent(slug)}`;
         frame.src = `/templates/${slug}/index.html`;
         modal.hidden = false;
